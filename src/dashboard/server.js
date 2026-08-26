@@ -7,6 +7,7 @@ import { listMissions, getMissionStats, getMissionTrail } from '../engine/missio
 import { getTotal, getMonthly, getWeekly, getToday, getHistory, getByService, getDailyTotals } from '../engine/earnings-tracker.js';
 import { listInstalledSkills, listAvailableSkills } from '../integrations/openclaw-bridge.js';
 import { listAvailableJobs, getAgentProfile, listOrders, registerAgent, syncStatus, acceptJob, deliverJob, getWallet, acceptProposal, rejectProposal, sendMessage, getMessages, requestWithdraw, claimAgent, getJobDetail } from '../integrations/hyrve-bridge.js';
+import { runOutreachCampaign } from '../utils/outreach-runner.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -430,6 +431,20 @@ export function createDashboardServer() {
   app.get('/api/hyrve/jobs/:id', async (req, res) => {
     try { res.json(await getJobDetail(req.params.id)); }
     catch (err) { res.status(500).json({ error: { code: 'INTERNAL_ERROR', message: err.message } }); }
+  });
+
+  /**
+   * POST /api/outreach/trigger
+   * Trigger 20-lead outbound campaign across 25 marketplaces
+   */
+  app.post('/api/outreach/trigger', async (req, res) => {
+    try {
+      const url = req.body.url || 'https://cashclaw-agent-rjfi.onrender.com';
+      const result = await runOutreachCampaign(url);
+      res.json({ success: true, ...result });
+    } catch (err) {
+      res.status(500).json({ error: { code: 'OUTREACH_ERROR', message: err.message } });
+    }
   });
 
   /**
