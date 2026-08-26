@@ -40,6 +40,10 @@ export function createDashboardServer() {
   const publicDir = path.join(__dirname, 'public');
   app.use(express.static(publicDir));
 
+  app.get('/', (req, res) => {
+    res.sendFile(path.join(publicDir, 'index.html'));
+  });
+
   // ─── API Routes ────────────────────────────────────────────────────
 
   /**

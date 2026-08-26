@@ -34,8 +34,8 @@ export async function runDashboard(options = {}) {
   showMiniBanner();
 
   const config = await loadConfig();
-  const startPort = options.port || config.server.port || 3847;
-  const host = config.server.host || 'localhost';
+  const startPort = parseInt(process.env.PORT) || options.port || config.server?.port || 3847;
+  const host = process.env.HOST || '0.0.0.0';
 
   const spinner = ora('Starting dashboard server...').start();
 
@@ -45,7 +45,7 @@ export async function runDashboard(options = {}) {
     const { server, usedPort } = await startServer(app, startPort, host);
 
     const url = `http://${host}:${usedPort}`;
-    spinner.succeed(`Dashboard running at ${green.bold(url)}`);
+    spinner.succeed(`Dashboard0 running at ${green.bold(url)}`);
     
     if (usedPort !== startPort) {
       console.log(dim(`  (Note: Port ${startPort} was busy, switched to ${usedPort})`));
@@ -59,28 +59,16 @@ export async function runDashboard(options = {}) {
     console.log(`  ${dim('GET')}  ${url}/api/skills`);
     console.log(`  ${dim('POST')} ${url}/api/config`);
     console.log();
-    console.log(dim('  Press Ctrl+C to stop the server.\n'));
 
-    // Auto-open browser unless --no-open flag
-    if (!options.noOpen) {
+    if (options.open !== false && !process.env.PORT) {
       try {
         await open(url);
-      } catch {
-        console.log(dim(`  Could not auto-open browser. Visit ${url} manually.\n`));
+      } catch (e) {
+        // Ignore open errors in headless environments
       }
     }
-
-    // Keep process alive
-    process.on('SIGINT', () => {
-      console.log(dim('\n  Dashboard stopped.\n'));
-      process.exit(0);
-    });
-
-    process.on('SIGTERM', () => {
-      process.exit(0);
-    });
   } catch (err) {
-    spinner.fail(err.message);
+    spinner.fail(`Failed to start dashboard: ${err.message}`);
     process.exit(1);
   }
 }

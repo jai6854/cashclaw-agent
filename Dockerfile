@@ -12,12 +12,10 @@ RUN npm ci --only=production
 # Copy application source
 COPY . .
 
-# Expose port
-EXPOSE 3851
+# Expose default port
+EXPOSE 10000
 
-# Environment defaults
-ENV PORT=3851
 ENV NODE_ENV=production
 
-# Start CashClaw dashboard & poller
-CMD ["node", "bin/cashclaw.js", "dashboard", "--port", "3851"]
+# Start CashClaw dashboard
+CMD ["node", "bin/cashclaw.js", "dashboard", "--no-open"]
