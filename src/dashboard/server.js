@@ -33,6 +33,9 @@ export function createDashboardServer() {
     bids_accepted: 0
   };
 
+  // Initialize network health audit immediately on startup
+  auditNetworkHealth().then(res => { cachedNetworkHealth = res; }).catch(() => {});
+
   // Background 30-second Marketplace Network Health & Job Scanner Daemon
   setInterval(async () => {
     try {
