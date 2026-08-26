@@ -9,6 +9,7 @@ import { listInstalledSkills, listAvailableSkills } from '../integrations/opencl
 import { listAvailableJobs, getAgentProfile, listOrders, registerAgent, syncStatus, acceptJob, deliverJob, getWallet, acceptProposal, rejectProposal, sendMessage, getMessages, requestWithdraw, claimAgent, getJobDetail } from '../integrations/hyrve-bridge.js';
 import { runOutreachCampaign } from '../utils/outreach-runner.js';
 import { HUNDRED_SKILLS } from '../engine/skills-registry.js';
+import { SKILL_FAMILIES, getTotalSubCapabilitiesCount } from '../engine/sub-skills-registry.js';
 import { processSmartBid, performQA } from '../engine/smart-bidder.js';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -433,6 +434,18 @@ export function createDashboardServer() {
   app.get('/api/hyrve/jobs/:id', async (req, res) => {
     try { res.json(await getJobDetail(req.params.id)); }
     catch (err) { res.status(500).json({ error: { code: 'INTERNAL_ERROR', message: err.message } }); }
+  });
+
+  /**
+   * GET /api/skills/families
+   * Return 30 Skill Families with 100+ Sub-Capabilities
+   */
+  app.get('/api/skills/families', (req, res) => {
+    res.json({
+      families_count: SKILL_FAMILIES.length,
+      sub_capabilities_count: getTotalSubCapabilitiesCount(),
+      families: SKILL_FAMILIES
+    });
   });
 
   /**
