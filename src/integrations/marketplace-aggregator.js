@@ -34,15 +34,13 @@ export const SUPPORTED_MARKETPLACES = [
 ];
 
 /**
- * Probe network health across all 25 marketplace endpoints and return HTTP status + job count.
+ * Probe network health across all 25 marketplace endpoints concurrently in parallel (< 3 seconds total).
  */
 export async function auditNetworkHealth() {
-  const results = [];
-
-  for (const m of SUPPORTED_MARKETPLACES) {
+  const promises = SUPPORTED_MARKETPLACES.map(async (m) => {
     try {
       const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 3000); // 3s timeout per connector
+      const timeoutId = setTimeout(() => controller.abort(), 2500); // 2.5s timeout per connector
 
       const res = await fetch(m.url, {
         method: 'GET',
@@ -69,29 +67,29 @@ export async function auditNetworkHealth() {
       }
 
       const statusIcon = res.status === 200 ? '🟢' : res.status === 401 ? '🟡' : '🔴';
-      results.push({
+      return {
         id: m.id,
         name: m.name,
         http_status: res.status,
         jobs_found: jobsFound,
         health_label: `${statusIcon} ${res.status} | ${jobsFound} jobs`,
         url: m.url
-      });
+      };
     } catch (err) {
       const isTimeout = err.name === 'AbortError';
       const statusText = isTimeout ? 'TIMEOUT' : 'ERR';
-      results.push({
+      return {
         id: m.id,
         name: m.name,
         http_status: isTimeout ? 408 : 503,
         jobs_found: 0,
         health_label: `🔴 ${statusText} | 0 jobs`,
         url: m.url
-      });
+      };
     }
-  }
+  });
 
-  return results;
+  return Promise.all(promises);
 }
 
 export async function getMarketplaceStatus() {
