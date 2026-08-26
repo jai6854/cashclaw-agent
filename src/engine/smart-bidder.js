@@ -1,6 +1,6 @@
 'use strict';
 
-import { SKILL_FAMILIES_V2, composeWorkflowPipeline } from './sub-skills-registry.js';
+import { SKILL_FAMILIES_V3, composeWorkflowPipeline } from './sub-skills-registry.js';
 import dayjs from 'dayjs';
 
 const BIDS_CACHE = new Set();
@@ -11,11 +11,11 @@ const BIDS_CACHE = new Set();
 export function decomposeJobRequirements(jobTitle = '', jobDescription = '') {
   const fullText = `${jobTitle} ${jobDescription}`.toLowerCase();
 
-  let matchedFamily = SKILL_FAMILIES_V2[0];
+  let matchedFamily = SKILL_FAMILIES_V3[0];
   let maxScore = -1;
   const matchedSubSkills = [];
 
-  for (const family of SKILL_FAMILIES_V2) {
+  for (const family of SKILL_FAMILIES_V3) {
     let familyScore = 0;
 
     // Check family keywords
@@ -26,8 +26,8 @@ export function decomposeJobRequirements(jobTitle = '', jobDescription = '') {
 
     // Match sub-capabilities
     for (const sub of family.sub_capabilities) {
-      if (fullText.includes(sub.toLowerCase())) {
-        matchedSubSkills.push(sub);
+      if (fullText.includes(sub.name.toLowerCase())) {
+        matchedSubSkills.push(sub.name);
         familyScore += 4;
       }
     }
