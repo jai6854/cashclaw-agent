@@ -490,6 +490,19 @@ export function createDashboardServer() {
   });
 
   /**
+   * Direct Client Instant Checkout Routes
+   */
+  app.get('/api/checkout/trial', (req, res) => {
+    res.redirect('https://buy.stripe.com/test_trial_1usd');
+  });
+  app.get('/api/checkout/leadgen', (req, res) => {
+    res.redirect('https://buy.stripe.com/test_leadgen_29usd');
+  });
+  app.get('/api/checkout/seo', (req, res) => {
+    res.redirect('https://buy.stripe.com/test_seo_49usd');
+  });
+
+  /**
    * GET /api/marketplaces/health
    * Returns live HTTP status & job counts for all 25 marketplace connectors.
    */
