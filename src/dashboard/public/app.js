@@ -52,6 +52,8 @@ async function loadStatus() {
   document.getElementById('infoCurrency').textContent = data.agent?.currency || 'USD';
 
   if (data.economy) {
+    if (document.getElementById('econScanned')) document.getElementById('econScanned').textContent = data.economy.jobs_scanned || 0;
+    if (document.getElementById('econFound')) document.getElementById('econFound').textContent = data.economy.unique_jobs_found || 0;
     if (document.getElementById('econEligible')) document.getElementById('econEligible').textContent = data.economy.eligible_jobs;
     if (document.getElementById('econBids')) document.getElementById('econBids').textContent = data.economy.bids_submitted;
     if (document.getElementById('econAccepted')) document.getElementById('econAccepted').textContent = data.economy.bids_accepted;
