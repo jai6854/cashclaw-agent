@@ -11,6 +11,7 @@ import { runOutreachCampaign } from '../utils/outreach-runner.js';
 import { HUNDRED_SKILLS } from '../engine/skills-registry.js';
 import { SKILL_FAMILIES_V3 } from '../engine/sub-skills-registry.js';
 import { processSmartBid, performQA } from '../engine/smart-bidder.js';
+import { auditNetworkHealth } from '../integrations/marketplace-aggregator.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -22,7 +23,8 @@ const __dirname = path.dirname(__filename);
 export function createDashboardServer() {
   const app = express();
 
-  // Diagnostic metrics counters
+  // Diagnostic metrics counters & network health cache
+  let cachedNetworkHealth = [];
   const globalStats = {
     jobs_scanned: 0,
     unique_jobs_found: 0,
@@ -31,16 +33,25 @@ export function createDashboardServer() {
     bids_accepted: 0
   };
 
-  // Background 30-second Marketplace Job Discovery Daemon
+  // Background 30-second Marketplace Network Health & Job Scanner Daemon
   setInterval(async () => {
     try {
-      globalStats.jobs_scanned += 25; // 25 marketplaces polled
+      globalStats.jobs_scanned += 25; // 25 marketplace connectors executed
+      cachedNetworkHealth = await auditNetworkHealth();
+
+      let totalFoundThisScan = 0;
+      for (const connector of cachedNetworkHealth) {
+        if (connector.jobs_found > 0) {
+          totalFoundThisScan += connector.jobs_found;
+        }
+      }
+
+      globalStats.unique_jobs_found += totalFoundThisScan;
+      globalStats.eligible_jobs += totalFoundThisScan;
+
       const config = await loadConfig();
       const jobResult = await listAvailableJobs(config);
       if (jobResult && jobResult.jobs && jobResult.jobs.length > 0) {
-        globalStats.unique_jobs_found += jobResult.jobs.length;
-        globalStats.eligible_jobs += jobResult.jobs.length;
-
         for (const job of jobResult.jobs) {
           const bidResult = await processSmartBid(job);
           if (bidResult && bidResult.success) {
@@ -127,6 +138,7 @@ export function createDashboardServer() {
           workspace: config.openclaw?.workspace || null,
           auto_detected: config.openclaw?.auto_detected || false,
         },
+        network_health: cachedNetworkHealth,
         economy: {
           agents: 400,
           marketplaces: 25,
@@ -469,9 +481,17 @@ export function createDashboardServer() {
   });
 
   /**
-   * POST /api/hyrve/wallet/withdraw
-   * Request a withdrawal from the HYRVE wallet.
+   * GET /api/marketplaces/health
+   * Returns live HTTP status & job counts for all 25 marketplace connectors.
    */
+  app.get('/api/marketplaces/health', async (req, res) => {
+    try {
+      const health = await auditNetworkHealth();
+      res.json({ total_marketplaces: health.length, connectors: health });
+    } catch (err) {
+      res.status(500).json({ error: { code: 'HEALTH_CHECK_ERROR', message: err.message } });
+    }
+  });
   app.post('/api/hyrve/wallet/withdraw', async (req, res) => {
     try { res.json(await requestWithdraw(req.body.amount_usd, req.body.method)); }
     catch (err) { res.status(500).json({ error: { code: 'INTERNAL_ERROR', message: err.message } }); }

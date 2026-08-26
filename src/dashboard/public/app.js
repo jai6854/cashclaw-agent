@@ -63,6 +63,18 @@ async function loadStatus() {
     if (document.getElementById('econRevenue')) document.getElementById('econRevenue').textContent = '$' + data.economy.revenue_usd.toFixed(2);
     if (document.getElementById('econCost')) document.getElementById('econCost').textContent = '$' + data.economy.ai_api_cost_usd.toFixed(2);
     if (document.getElementById('econProfit')) document.getElementById('econProfit').textContent = '$' + data.economy.net_profit_usd.toFixed(2) + ' (' + data.economy.net_profit_margin + ')';
+  if (data.network_health && document.getElementById('networkHealthGrid')) {
+    const grid = document.getElementById('networkHealthGrid');
+    if (data.network_health.length > 0) {
+      grid.innerHTML = data.network_health.map(c => `
+        <div style="background: #1e293b; padding: 8px 12px; border-radius: 6px; border-left: 3px solid ${c.http_status === 200 ? '#4ade80' : c.http_status === 401 ? '#fbbf24' : '#f87171'};">
+          <span style="color: #cbd5e1; font-weight: bold;">${c.name}</span>:
+          <span style="color: ${c.http_status === 200 ? '#4ade80' : c.http_status === 401 ? '#fbbf24' : '#f87171'}; font-weight: bold; margin-left: 4px;">
+            ${c.health_label}
+          </span>
+        </div>
+      `).join('');
+    }
   }
 
   const stripeEl = document.getElementById('infoStripe');
