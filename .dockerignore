@@ -1,0 +1,7 @@
+node_modules
+.git
+.github
+*.log
+scratch
+.env
+.DS_Store

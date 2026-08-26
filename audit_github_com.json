@@ -1,0 +1,385 @@
+{
+  "url": "https://github.com",
+  "tier": "pro",
+  "audited_at": "2026-08-25T19:57:19.475Z",
+  "response": {
+    "status": 200,
+    "timing_ms": 662,
+    "page_size_bytes": 574506,
+    "content_type": "text/html; charset=utf-8"
+  },
+  "scores": {
+    "overall": 74,
+    "overall_grade": "C",
+    "technical": 86,
+    "technical_grade": "B",
+    "on_page": 67,
+    "on_page_grade": "D"
+  },
+  "technical": [
+    {
+      "name": "HTTPS enabled",
+      "status": "PASS",
+      "value": "https://github.com",
+      "note": ""
+    },
+    {
+      "name": "Server response time",
+      "status": "FAIL",
+      "value": "662ms",
+      "note": "Slow - target < 500ms"
+    },
+    {
+      "name": "Mobile viewport meta",
+      "status": "PASS",
+      "value": true,
+      "note": ""
+    },
+    {
+      "name": "Canonical tag",
+      "status": "PASS",
+      "value": "https://github.com",
+      "note": ""
+    },
+    {
+      "name": "HTML lang attribute",
+      "status": "PASS",
+      "value": "en",
+      "note": ""
+    },
+    {
+      "name": "Charset declaration",
+      "status": "PASS",
+      "value": true,
+      "note": ""
+    },
+    {
+      "name": "Compression (gzip/br)",
+      "status": "PASS",
+      "value": "gzip",
+      "note": ""
+    }
+  ],
+  "on_page": [
+    {
+      "name": "Title tag exists",
+      "status": "FAIL",
+      "value": "GitHub · Change is constant. GitHub keeps you ahead. · GitHub",
+      "note": "61 chars"
+    },
+    {
+      "name": "Title length (50-60 chars)",
+      "status": "FAIL",
+      "value": "61 chars",
+      "note": "Too long"
+    },
+    {
+      "name": "Meta description exists",
+      "status": "PASS",
+      "value": "Join the world&#39;s most widely adopted, AI-powered developer platform where millions of developers, businesses, and the largest open source community build software that advances humanity.",
+      "note": ""
+    },
+    {
+      "name": "Meta description length (150-160)",
+      "status": "FAIL",
+      "value": "190 chars",
+      "note": ""
+    },
+    {
+      "name": "H1 tag exists and unique",
+      "status": "PASS",
+      "value": "1 H1 tags found",
+      "note": ""
+    },
+    {
+      "name": "H2 tags present",
+      "status": "PASS",
+      "value": "9 H2 tags",
+      "note": ""
+    },
+    {
+      "name": "Images have alt text",
+      "status": "FAIL",
+      "value": "7/24 have alt",
+      "note": "Add alt text to all images"
+    },
+    {
+      "name": "Images use lazy loading",
+      "status": "PASS",
+      "value": "24/24 lazy",
+      "note": ""
+    },
+    {
+      "name": "Open Graph tags",
+      "status": "PASS",
+      "value": {
+        "title": "GitHub · Change is constant. GitHub keeps you ahead.",
+        "description": "Join the world&#39;s most widely adopted, AI-powered developer platform where millions of developers, businesses, and the largest open source community build software that advances humanity.",
+        "image": "https://images.ctfassets.net/8aevphvgewt8/4pe4eOtUJ0ARpZRE4fNekf/f52b1f9c52f059a33170229883731ed0/GH-Homepage-Universe-img.png"
+      },
+      "note": ""
+    },
+    {
+      "name": "Twitter Card meta",
+      "status": "PASS",
+      "value": "summary_large_image",
+      "note": ""
+    },
+    {
+      "name": "Content length (300+ words)",
+      "status": "PASS",
+      "value": "1135 words",
+      "note": ""
+    },
+    {
+      "name": "Favicon configured",
+      "status": "PASS",
+      "value": true,
+      "note": ""
+    }
+  ],
+  "links": {
+    "total": 142,
+    "internal": 112,
+    "external": 30,
+    "emptyAnchors": 3,
+    "links": [
+      {
+        "href": "#start-of-content",
+        "text": "Skip to content"
+      },
+      {
+        "href": "/",
+        "text": ""
+      },
+      {
+        "href": "/login",
+        "text": "Sign in"
+      },
+      {
+        "href": "https://github.com/features/copilot",
+        "text": "GitHub CopilotWrite better code with AI"
+      },
+      {
+        "href": "https://github.com/features/ai/github-app",
+        "text": "GitHub Copilot appDirect agents from issue to merge"
+      },
+      {
+        "href": "https://github.com/mcp",
+        "text": "MCP RegistryIntegrate external tools"
+      },
+      {
+        "href": "https://github.com/features/actions",
+        "text": "ActionsAutomate any workflow"
+      },
+      {
+        "href": "https://github.com/features/codespaces",
+        "text": "CodespacesInstant dev environments"
+      },
+      {
+        "href": "https://github.com/features/issues",
+        "text": "IssuesPlan and track work"
+      },
+      {
+        "href": "https://github.com/features/code-review",
+        "text": "Code ReviewManage code changes"
+      },
+      {
+        "href": "https://github.com/features/code-quality",
+        "text": "Code QualityEnforce quality at merge"
+      },
+      {
+        "href": "https://github.com/security/advanced-security",
+        "text": "GitHub Advanced SecurityFind and fix vulnerabilities"
+      },
+      {
+        "href": "https://github.com/security/advanced-security/code-security",
+        "text": "Code securitySecure your code as you build"
+      },
+      {
+        "href": "https://github.com/security/advanced-security/secret-protection",
+        "text": "Secret protectionStop leaks before they start"
+      },
+      {
+        "href": "https://github.com/why-github",
+        "text": "Why GitHub"
+      },
+      {
+        "href": "https://docs.github.com",
+        "text": "Documentation"
+      },
+      {
+        "href": "https://github.blog",
+        "text": "Blog"
+      },
+      {
+        "href": "https://github.blog/changelog",
+        "text": "Changelog"
+      },
+      {
+        "href": "https://github.com/marketplace",
+        "text": "Marketplace"
+      },
+      {
+        "href": "https://github.com/features",
+        "text": "View all features"
+      },
+      {
+        "href": "https://github.com/enterprise",
+        "text": "Enterprises"
+      },
+      {
+        "href": "https://github.com/team",
+        "text": "Small and medium teams"
+      },
+      {
+        "href": "https://github.com/enterprise/startups",
+        "text": "Startups"
+      },
+      {
+        "href": "https://github.com/solutions/industry/nonprofits",
+        "text": "Nonprofits"
+      },
+      {
+        "href": "https://github.com/solutions/use-case/app-modernization",
+        "text": "App Modernization"
+      },
+      {
+        "href": "https://github.com/solutions/use-case/devsecops",
+        "text": "DevSecOps"
+      },
+      {
+        "href": "https://github.com/solutions/use-case/devops",
+        "text": "DevOps"
+      },
+      {
+        "href": "https://github.com/solutions/use-case/ci-cd",
+        "text": "CI/CD"
+      },
+      {
+        "href": "https://github.com/solutions/use-case",
+        "text": "View all use cases"
+      },
+      {
+        "href": "https://github.com/solutions/industry/healthcare",
+        "text": "Healthcare"
+      },
+      {
+        "href": "https://github.com/solutions/industry/financial-services",
+        "text": "Financial services"
+      },
+      {
+        "href": "https://github.com/solutions/industry/manufacturing",
+        "text": "Manufacturing"
+      },
+      {
+        "href": "https://github.com/solutions/industry/government",
+        "text": "Government"
+      },
+      {
+        "href": "https://github.com/solutions/industry",
+        "text": "View all industries"
+      },
+      {
+        "href": "https://github.com/solutions",
+        "text": "View all solutions"
+      },
+      {
+        "href": "https://github.com/resources/articles?topic=ai",
+        "text": "AI"
+      },
+      {
+        "href": "https://github.com/resources/articles?topic=software-development",
+        "text": "Software Development"
+      },
+      {
+        "href": "https://github.com/resources/articles?topic=devops",
+        "text": "DevOps"
+      },
+      {
+        "href": "https://github.com/resources/articles?topic=security",
+        "text": "Security"
+      },
+      {
+        "href": "https://github.com/resources/articles",
+        "text": "View all topics"
+      },
+      {
+        "href": "https://github.com/customer-stories",
+        "text": "Customer stories"
+      },
+      {
+        "href": "https://github.com/resources/events",
+        "text": "Events &amp; webinars"
+      },
+      {
+        "href": "https://github.com/resources/whitepapers",
+        "text": "Ebooks &amp; reports"
+      },
+      {
+        "href": "https://github.com/solutions/executive-insights",
+        "text": "Business insights"
+      },
+      {
+        "href": "https://skills.github.com",
+        "text": "GitHub Skills"
+      },
+      {
+        "href": "https://docs.github.com",
+        "text": "Documentation"
+      },
+      {
+        "href": "https://support.github.com",
+        "text": "Customer support"
+      },
+      {
+        "href": "https://github.com/orgs/community/discussions",
+        "text": "Community forum"
+      },
+      {
+        "href": "https://github.com/trust-center",
+        "text": "Trust center"
+      },
+      {
+        "href": "https://github.com/partners",
+        "text": "Partners"
+      }
+    ]
+  },
+  "images": 24,
+  "word_count": 1135,
+  "headings": {
+    "h1": [
+      "The future of building happens together"
+    ],
+    "h2": [
+      "Navigation Menu",
+      "GitHub features",
+      "GitHub customers",
+      "<div>Accelerate your entire workflow</div>",
+      "<div>Built-in application security where found means fixed</div>",
+      "<div>Work together, achieve more</div>",
+      "<div>From startups to enterprises, <span>GitHub scales with teams of any size in any industry.</span></div>",
+      "Millions of developers and businesses call GitHub home",
+      "Site-wide Links"
+    ],
+    "h3": [
+      "<span class=\"Primer_Brand__Text-module__Text___XeGJJ Primer_Brand__Text-module__Text-font--mona-sans___a8XJD Primer_Brand__Text-module__Text--muted___rE6mh Primer_Brand__Text-module__Text--400___6gPcS Primer_Brand__Text-module__Text--antialiased___TYoXS\"><span class=\"Primer_Brand__Text-module__Text___XeGJJ Primer_Brand__Text-module__Text-font--mona-sans___a8XJD Primer_Brand__Text-module__Text--default___GhPh_ Primer_Brand__Text-module__Text--400___6gPcS Primer_Brand__Text-module__Text--antialiased___TYoXS\">Your AI partner everywhere.</span> Copilot is ready to work with you at each step of the software development lifecycle.</span>",
+      "Automate your path to production",
+      "Code instantly from anywhere",
+      "Keep momentum on the go",
+      "Shape your toolchain",
+      "Apply fixes in seconds. <span>Spend less time debugging and more time building features with Copilot Autofix.</span>",
+      "<span class=\"Primer_Brand__Text-module__Text___XeGJJ Primer_Brand__Text-module__Text-font--mona-sans___a8XJD Primer_Brand__Text-module__Text--muted___rE6mh Primer_Brand__Text-module__Text--400___6gPcS Primer_Brand__Text-module__Text--antialiased___TYoXS\"><span class=\"Primer_Brand__Text-module__Text___XeGJJ Primer_Brand__Text-module__Text-font--mona-sans___a8XJD Primer_Brand__Text-module__Text--default___GhPh_ Primer_Brand__Text-module__Text--400___6gPcS Primer_Brand__Text-module__Text--antialiased___TYoXS\">Plan with clarity.</span> Organize everything from high-level roadmaps to everyday tasks.</span>",
+      "Keep track of your tasks",
+      "Share ideas and ask questions",
+      "Review code changes together",
+      "Fund open source projects",
+      "<span class=\"Newsletter-module__headingDot__mwB26\" aria-hidden=\"true\"></span>The developer newsletter",
+      "Platform",
+      "Ecosystem",
+      "Support",
+      "Company"
+    ]
+  }
+}

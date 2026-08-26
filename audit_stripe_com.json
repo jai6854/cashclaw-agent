@@ -1,0 +1,391 @@
+{
+  "url": "https://stripe.com",
+  "tier": "pro",
+  "audited_at": "2026-08-25T19:57:17.439Z",
+  "response": {
+    "status": 200,
+    "timing_ms": 1098,
+    "page_size_bytes": 695782,
+    "content_type": "text/html; charset=utf-8"
+  },
+  "scores": {
+    "overall": 79,
+    "overall_grade": "C",
+    "technical": 86,
+    "technical_grade": "B",
+    "on_page": 75,
+    "on_page_grade": "C"
+  },
+  "technical": [
+    {
+      "name": "HTTPS enabled",
+      "status": "PASS",
+      "value": "https://stripe.com",
+      "note": ""
+    },
+    {
+      "name": "Server response time",
+      "status": "FAIL",
+      "value": "1098ms",
+      "note": "Slow - target < 500ms"
+    },
+    {
+      "name": "Mobile viewport meta",
+      "status": "PASS",
+      "value": true,
+      "note": ""
+    },
+    {
+      "name": "Canonical tag",
+      "status": "PASS",
+      "value": "https://stripe.com/in",
+      "note": ""
+    },
+    {
+      "name": "HTML lang attribute",
+      "status": "PASS",
+      "value": "en-IN",
+      "note": ""
+    },
+    {
+      "name": "Charset declaration",
+      "status": "PASS",
+      "value": true,
+      "note": ""
+    },
+    {
+      "name": "Compression (gzip/br)",
+      "status": "PASS",
+      "value": "gzip",
+      "note": ""
+    }
+  ],
+  "on_page": [
+    {
+      "name": "Title tag exists",
+      "status": "PASS",
+      "value": "Stripe | Financial Infrastructure to Grow Your Revenue",
+      "note": "54 chars"
+    },
+    {
+      "name": "Title length (50-60 chars)",
+      "status": "PASS",
+      "value": "54 chars",
+      "note": "Good"
+    },
+    {
+      "name": "Meta description exists",
+      "status": "PASS",
+      "value": "Stripe is a financial services platform that helps all types of businesses accept payments, build flexible billing models and manage money movement.",
+      "note": ""
+    },
+    {
+      "name": "Meta description length (150-160)",
+      "status": "FAIL",
+      "value": "148 chars",
+      "note": ""
+    },
+    {
+      "name": "H1 tag exists and unique",
+      "status": "FAIL",
+      "value": "2 H1 tags found",
+      "note": ""
+    },
+    {
+      "name": "H2 tags present",
+      "status": "PASS",
+      "value": "5 H2 tags",
+      "note": ""
+    },
+    {
+      "name": "Images have alt text",
+      "status": "FAIL",
+      "value": "4/31 have alt",
+      "note": "Add alt text to all images"
+    },
+    {
+      "name": "Images use lazy loading",
+      "status": "PASS",
+      "value": "30/31 lazy",
+      "note": ""
+    },
+    {
+      "name": "Open Graph tags",
+      "status": "PASS",
+      "value": {
+        "title": "Stripe | Financial Infrastructure to Grow Your Revenue",
+        "description": "Stripe is a financial services platform that helps all types of businesses accept payments, build flexible billing models and manage money movement.",
+        "image": "https://images.stripeassets.com/fzn2n1nzq965/XtX984S1GJVsVOXFC7kMu/01988281e867728dfb09aa7793a6e3b9/Stripe.jpg?q=80"
+      },
+      "note": ""
+    },
+    {
+      "name": "Twitter Card meta",
+      "status": "PASS",
+      "value": "summary_large_image",
+      "note": ""
+    },
+    {
+      "name": "Content length (300+ words)",
+      "status": "PASS",
+      "value": "1896 words",
+      "note": ""
+    },
+    {
+      "name": "Favicon configured",
+      "status": "PASS",
+      "value": true,
+      "note": ""
+    }
+  ],
+  "links": {
+    "total": 180,
+    "internal": 154,
+    "external": 26,
+    "emptyAnchors": 29,
+    "links": [
+      {
+        "href": "/",
+        "text": ""
+      },
+      {
+        "href": "/in/pricing",
+        "text": "Pricing"
+      },
+      {
+        "href": "https://dashboard.stripe.com/login",
+        "text": "Sign in"
+      },
+      {
+        "href": "https://dashboard.stripe.com/register",
+        "text": "Start now"
+      },
+      {
+        "href": "/in/contact/sales",
+        "text": "Contact sales"
+      },
+      {
+        "href": "https://dashboard.stripe.com/login",
+        "text": "Sign inSign in"
+      },
+      {
+        "href": "/in/contact/sales",
+        "text": "Contact sales"
+      },
+      {
+        "href": "/in/contact/sales",
+        "text": "Request an invite"
+      },
+      {
+        "href": "/in/newsroom/news/stripe-openai-instant-checkout",
+        "text": ""
+      },
+      {
+        "href": "/in/customers/amazon",
+        "text": ""
+      },
+      {
+        "href": "/in/newsroom/news/nvidia-collaboration-with-stripe",
+        "text": ""
+      },
+      {
+        "href": "/in/newsroom/news/stripe-ford-agreement",
+        "text": ""
+      },
+      {
+        "href": "/in/newsroom/news/google-and-stripe",
+        "text": ""
+      },
+      {
+        "href": "/in/customers/shopify",
+        "text": ""
+      },
+      {
+        "href": "/in/customers/mindbody",
+        "text": ""
+      },
+      {
+        "href": "/in/customers/ramp",
+        "text": ""
+      },
+      {
+        "href": "/in/customers/figma",
+        "text": ""
+      },
+      {
+        "href": "/in/customers/woo",
+        "text": ""
+      },
+      {
+        "href": "/in/newsroom/news/stripe-and-uber",
+        "text": ""
+      },
+      {
+        "href": "/in/customers/anthropic",
+        "text": ""
+      },
+      {
+        "href": "/in/customers/brightwheel",
+        "text": ""
+      },
+      {
+        "href": "/in/customers/cursor",
+        "text": ""
+      },
+      {
+        "href": "/in/newsroom/news/stripe-openai-instant-checkout",
+        "text": ""
+      },
+      {
+        "href": "/in/customers/amazon",
+        "text": ""
+      },
+      {
+        "href": "/in/newsroom/news/nvidia-collaboration-with-stripe",
+        "text": ""
+      },
+      {
+        "href": "/in/newsroom/news/stripe-ford-agreement",
+        "text": ""
+      },
+      {
+        "href": "/in/newsroom/news/google-and-stripe",
+        "text": ""
+      },
+      {
+        "href": "/in/customers/shopify",
+        "text": ""
+      },
+      {
+        "href": "/in/customers/mindbody",
+        "text": ""
+      },
+      {
+        "href": "/in/customers/ramp",
+        "text": ""
+      },
+      {
+        "href": "/in/customers/figma",
+        "text": ""
+      },
+      {
+        "href": "/in/customers/woo",
+        "text": ""
+      },
+      {
+        "href": "/in/newsroom/news/stripe-and-uber",
+        "text": ""
+      },
+      {
+        "href": "/in/customers/anthropic",
+        "text": ""
+      },
+      {
+        "href": "/in/customers/brightwheel",
+        "text": ""
+      },
+      {
+        "href": "/in/customers/cursor",
+        "text": ""
+      },
+      {
+        "href": "https://stripe.com/sessions/2026?utm_medium=owned-surfaces&amp;utm_source=9cb9&amp;utm_campaign=GLOBAL_4301&amp;utm_content=8a70&amp;utm_term=5a728d3d167c",
+        "text": "Watch now"
+      },
+      {
+        "href": "https://status.stripe.com",
+        "text": "historical uptime"
+      },
+      {
+        "href": "/in/enterprise",
+        "text": "Stripe for enterprises"
+      },
+      {
+        "href": "/in/customers/hertz",
+        "text": "Read the story"
+      },
+      {
+        "href": "/in/customers/hertz",
+        "text": "Read the story"
+      },
+      {
+        "href": "/in/customers/urbn",
+        "text": "Read the story"
+      },
+      {
+        "href": "/in/customers/urbn",
+        "text": "Read the story"
+      },
+      {
+        "href": "/in/customers/instacart",
+        "text": "Read the story"
+      },
+      {
+        "href": "/in/customers/instacart",
+        "text": "Read the story"
+      },
+      {
+        "href": "/in/customers/le-monde",
+        "text": "Read the story"
+      },
+      {
+        "href": "/in/customers/le-monde",
+        "text": "Read the story"
+      },
+      {
+        "href": "/in/professional-services",
+        "text": "View services"
+      },
+      {
+        "href": "/in/partners",
+        "text": "View partners"
+      },
+      {
+        "href": "/in/support-plans",
+        "text": "View plans"
+      }
+    ]
+  },
+  "images": 31,
+  "word_count": 1896,
+  "headings": {
+    "h1": [
+      "<em class=\"hero-section__title-main\">Financial infrastructure to grow your revenue.</em> <span class=\"hero-section__title-copy\">Accept payments, offer financial services and implement custom revenue models – from your first transaction to your billionth.</span>",
+      "<em class=\"hero-section__title-main\">Financial infrastructure to grow your revenue.</em> <span class=\"hero-section__title-copy\">Accept payments, offer financial services and implement custom revenue models – from your first transaction to your billionth.</span>"
+    ],
+    "h2": [
+      "Flexible solutions for every business model.",
+      "The backbone of global commerce",
+      "Powering businesses of all sizes.",
+      "Reliable, extensible infrastructure for every stack.",
+      "What&#x27;s happening"
+    ],
+    "h3": [
+      "Accept and optimise payments globally – online and in person",
+      "Enable any billing model",
+      "Monetise through agentic commerce",
+      "Create a card issuing programme",
+      "Access borderless money movement with stablecoins and crypto",
+      "Embed payments in your platform",
+      "Transform your enterprise with agile financial infrastructure",
+      "Hertz unifies commerce with Stripe.",
+      "URBN consolidates $5 billion in online and in-store revenue onto Stripe.",
+      "Instacart powers online grocery delivery with Stripe.",
+      "Le Monde improves local and international payments with Stripe.",
+      "Build a foundation for your startup that enables faster growth",
+      "Make your SaaS platform a complete financial operating system",
+      "Connect to existing systems.",
+      "Scale with confidence.",
+      "Choose an integration path.",
+      "Businesses on Stripe generated US$1.9tn in 2025.",
+      "150K+ users have their best day ever on Stripe.",
+      "Tidemark&#x27;s vertical and SMB SaaS benchmark report.",
+      "Shopify&#x27;s Tobi Lütke sits down with John Collison.",
+      "New tools to process payments outside app stores.",
+      "Crypto.com partners with Stripe to enable better crypto payments.",
+      "Make your products shoppable through AI platforms.",
+      "How leading retailers unify customer experiences and drive growth.",
+      "Book of the week"
+    ]
+  }
+}
