@@ -32,7 +32,7 @@ export const SUPPORTED_MARKETPLACES = [
 
 export async function getMarketplaceStatus() {
   const config = await loadConfig();
-  const agentUrl = 'https://cashclaw-jai-agency.loca.lt';
+  const agentUrl = 'https://cashclaw-agent-rjfi.onrender.com';
 
   return SUPPORTED_MARKETPLACES.map(m => ({
     ...m,
