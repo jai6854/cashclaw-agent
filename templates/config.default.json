@@ -1,23 +1,30 @@
 {
   "agent": {
-    "name": "MyCashClaw",
-    "owner": "",
-    "email": "",
+    "name": "CashClawAgent",
+    "owner": "Jai Ganesh",
+    "email": "jai6854@gmail.com",
     "currency": "USD",
-    "created_at": ""
+    "country": "IN",
+    "payout_currency": "INR",
+    "export_purpose_code": "P0802",
+    "created_at": "2026-08-25T14:22:00.000Z"
   },
   "stripe": {
     "secret_key": "",
-    "connected": false,
-    "mode": "test"
+    "connected": true,
+    "mode": "live",
+    "publishable_key": "",
+    "account_country": "IN",
+    "payout_currency": "INR",
+    "export_purpose_code": "P0802"
   },
   "server": {
     "port": 3847,
-    "host": "localhost"
+    "host": "0.0.0.0"
   },
   "services": {
     "seo_audit": {
-      "enabled": false,
+      "enabled": true,
       "pricing": {
         "basic": 9,
         "standard": 29,
@@ -26,7 +33,7 @@
       "description": "Automated SEO audits with actionable recommendations"
     },
     "content_writing": {
-      "enabled": false,
+      "enabled": true,
       "pricing": {
         "post_500": 5,
         "post_1500": 12,
@@ -35,7 +42,7 @@
       "description": "AI-powered blog posts, articles, and newsletters"
     },
     "lead_generation": {
-      "enabled": false,
+      "enabled": true,
       "pricing": {
         "starter_25": 9,
         "standard_50": 15,
@@ -44,7 +51,7 @@
       "description": "Targeted lead lists with contact info and scoring"
     },
     "whatsapp_management": {
-      "enabled": false,
+      "enabled": true,
       "pricing": {
         "setup": 19,
         "monthly": 49
@@ -52,7 +59,7 @@
       "description": "WhatsApp Business setup and automated responses"
     },
     "social_media": {
-      "enabled": false,
+      "enabled": true,
       "pricing": {
         "weekly_1": 9,
         "weekly_3": 19,
@@ -61,7 +68,7 @@
       "description": "Social media content creation and scheduling"
     },
     "email_outreach": {
-      "enabled": false,
+      "enabled": true,
       "pricing": {
         "basic": 9,
         "standard": 19,
@@ -70,7 +77,7 @@
       "description": "Cold email sequences and outreach campaigns"
     },
     "competitor_analysis": {
-      "enabled": false,
+      "enabled": true,
       "pricing": {
         "basic": 19,
         "standard": 35,
@@ -79,7 +86,7 @@
       "description": "Competitor analysis reports with market insights"
     },
     "landing_page": {
-      "enabled": false,
+      "enabled": true,
       "pricing": {
         "basic": 15,
         "standard": 29,
@@ -88,7 +95,7 @@
       "description": "Landing page copy and HTML generation"
     },
     "data_scraping": {
-      "enabled": false,
+      "enabled": true,
       "pricing": {
         "basic": 9,
         "standard": 19,
@@ -97,32 +104,23 @@
       "description": "Web data extraction and structuring"
     },
     "reputation_management": {
-      "enabled": false,
+      "enabled": true,
       "pricing": {
         "basic": 19,
         "standard": 35,
         "pro": 49
       },
-      "description": "Online review monitoring and response"
+      "description": "Online reputation monitoring and response generation"
     }
   },
   "hyrve": {
-    "api_url": "https://api.hyrveai.com/v1",
-    "registered": false,
-    "agent_id": ""
+    "api_key": "",
+    "agent_id": "9e2cded0-e2b6-45ad-8a2c-ca4a83e1be3f",
+    "registered": true,
+    "api_url": "https://api.hyrveai.com/v1"
   },
-  "openclaw": {
-    "workspace": "",
-    "skills_dir": "",
-    "auto_detected": false
-  },
-  "heartbeat": {
-    "enabled": false,
-    "interval_ms": 60000
-  },
-  "stats": {
-    "total_missions": 0,
-    "completed_missions": 0,
-    "total_earned": 0
+  "omniroute": {
+    "api_key": "",
+    "connected": true
   }
 }
