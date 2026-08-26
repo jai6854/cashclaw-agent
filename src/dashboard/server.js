@@ -9,7 +9,7 @@ import { listInstalledSkills, listAvailableSkills } from '../integrations/opencl
 import { listAvailableJobs, getAgentProfile, listOrders, registerAgent, syncStatus, acceptJob, deliverJob, getWallet, acceptProposal, rejectProposal, sendMessage, getMessages, requestWithdraw, claimAgent, getJobDetail } from '../integrations/hyrve-bridge.js';
 import { runOutreachCampaign } from '../utils/outreach-runner.js';
 import { HUNDRED_SKILLS } from '../engine/skills-registry.js';
-import { SKILL_FAMILIES, getTotalSubCapabilitiesCount } from '../engine/sub-skills-registry.js';
+import { SKILL_FAMILIES_V2 } from '../engine/sub-skills-registry.js';
 import { processSmartBid, performQA } from '../engine/smart-bidder.js';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -438,13 +438,14 @@ export function createDashboardServer() {
 
   /**
    * GET /api/skills/families
-   * Return 30 Skill Families with 100+ Sub-Capabilities
+   * Return 30 Skill Families with 340+ Sub-Capabilities
    */
   app.get('/api/skills/families', (req, res) => {
+    const totalSubCapabilities = SKILL_FAMILIES_V2.reduce((acc, f) => acc + f.sub_capabilities.length, 0);
     res.json({
-      families_count: SKILL_FAMILIES.length,
-      sub_capabilities_count: getTotalSubCapabilitiesCount(),
-      families: SKILL_FAMILIES
+      families_count: SKILL_FAMILIES_V2.length,
+      sub_capabilities_count: totalSubCapabilities,
+      families: SKILL_FAMILIES_V2
     });
   });
 

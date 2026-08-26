@@ -1,411 +1,383 @@
 'use strict';
 
 /**
- * CashClaw KING Edition v2.0 - 30 Skill Families & 100+ Sub-Capabilities Architecture
+ * CASHCLAW KING EDITION - 30 SKILLS / 340+ SUB-CAPABILITIES MASTER TAXONOMY
  */
 
-export const SKILL_FAMILIES = [
-  // FAMILY 1: Lead Generation & Prospecting
+export const SKILL_FAMILIES_V2 = [
+  // 🟢 1. B2B Lead Generation & Data Mining (6 Families)
   {
     family_id: 'cashclaw-lead-generator',
-    name: 'B2B Lead Generation & Prospecting',
-    category: 'Lead Generation',
+    name: 'B2B Lead Generation',
+    category: 'B2B Lead Generation & Data Mining',
     default_price_usd: 29,
     sub_capabilities: [
-      { id: 'icp_builder', name: 'Ideal Customer Profile (ICP) Builder', est_cost_usd: 0.10 },
-      { id: 'company_discovery', name: 'Target Company Search & Discovery', est_cost_usd: 0.20 },
-      { id: 'decision_maker_finder', name: 'C-Level & VP Decision Maker Finder', est_cost_usd: 0.25 },
-      { id: 'email_finder', name: 'Verified Professional Email Finder', est_cost_usd: 0.30 },
-      { id: 'email_verification', name: 'SMTP & MX Email Verification & Hygiene', est_cost_usd: 0.15 },
-      { id: 'phone_enrichment', name: 'Phone & Direct Dial Enrichment', est_cost_usd: 0.40 },
-      { id: 'linkedin_research', name: 'LinkedIn Executive Profile Mining', est_cost_usd: 0.35 },
-      { id: 'lead_qualification', name: 'Lead Intent & Revenue Scoring', est_cost_usd: 0.20 },
-      { id: 'data_scraping', name: 'Web Directory & Map Data Scraper', est_cost_usd: 0.30 },
-      { id: 'data_dedup', name: 'Dataset Deduplication & Cleaning', est_cost_usd: 0.10 }
+      'ICP definition', 'Industry targeting', 'Geography targeting', 'Company-size filtering',
+      'Revenue/technology filtering', 'Company discovery', 'Decision-maker discovery',
+      'Job-title targeting', 'Contact-list generation', 'Lead qualification', 'Lead scoring',
+      'Intent-signal identification', 'Prospect prioritization'
     ]
   },
-
-  // FAMILY 2: Technical SEO & Website Audits
-  {
-    family_id: 'cashclaw-seo-auditor',
-    name: 'Technical SEO & Website Audits',
-    category: 'Technical SEO',
-    default_price_usd: 49,
-    sub_capabilities: [
-      { id: 'seo_crawler', name: 'Deep Technical Site Crawler', est_cost_usd: 0.30 },
-      { id: 'web_vitals_analyzer', name: 'Core Web Vitals & Speed Auditor', est_cost_usd: 0.20 },
-      { id: 'broken_link_checker', name: '404 & Broken Redirect Analyzer', est_cost_usd: 0.15 },
-      { id: 'sitemap_robots_audit', name: 'XML Sitemap & Robots.txt Auditor', est_cost_usd: 0.10 },
-      { id: 'schema_structured_data', name: 'Schema.org & JSON-LD Validator', est_cost_usd: 0.15 },
-      { id: 'onpage_keyword_audit', name: 'On-Page H1/Title/Meta Optimizer', est_cost_usd: 0.25 },
-      { id: 'backlink_analyzer', name: 'Backlink Profile & Toxic Link Audit', est_cost_usd: 0.40 },
-      { id: 'competitor_seo_audit', name: 'Competitor SERP Rank Matrix', est_cost_usd: 0.35 },
-      { id: 'wordpress_seo_opt', name: 'WordPress & Yoast/RankMath Config', est_cost_usd: 0.25 },
-      { id: 'seo_report_generator', name: 'Executive White-Label PDF Generator', est_cost_usd: 0.20 }
-    ]
-  },
-
-  // FAMILY 3: Content Writing & Copywriting
-  {
-    family_id: 'cashclaw-content-writer',
-    name: 'SEO Content & Copywriting',
-    category: 'Content Writing',
-    default_price_usd: 25,
-    sub_capabilities: [
-      { id: 'seo_article_writer', name: '2,500-Word SEO In-Depth Article', est_cost_usd: 0.40 },
-      { id: 'product_desc_writer', name: 'E-commerce Product Description Copy', est_cost_usd: 0.20 },
-      { id: 'newsletter_writer', name: 'Engaging Email Newsletter Writer', est_cost_usd: 0.15 },
-      { id: 'press_release_writer', name: 'Media-Grade Official Press Release', est_cost_usd: 0.30 },
-      { id: 'sales_copywriter', name: 'High-Converting Sales Page Copywriter', est_cost_usd: 0.50 },
-      { id: 'email_sequence_writer', name: '5-Part Cold Email Drip Sequence', est_cost_usd: 0.35 },
-      { id: 'fact_checker_editor', name: 'AI Content Fact-Checker & Proofreader', est_cost_usd: 0.15 },
-      { id: 'translation_localizer', name: 'Multi-Language Localization Engine', est_cost_usd: 0.25 }
-    ]
-  },
-
-  // FAMILY 4: Python Automation & Web Scraping
-  {
-    family_id: 'cashclaw-python-automation',
-    name: 'Python Automation & Web Scraping',
-    category: 'Python Automation',
-    default_price_usd: 39,
-    sub_capabilities: [
-      { id: 'python_script_builder', name: 'Custom Python Script Architect', est_cost_usd: 0.35 },
-      { id: 'puppeteer_selenium_scraper', name: 'Dynamic Headless Browser Scraper', est_cost_usd: 0.45 },
-      { id: 'api_integrator', name: 'REST/GraphQL API Wrapper Generator', est_cost_usd: 0.30 },
-      { id: 'json_csv_converter', name: 'Data Transformer & ETL Parser', est_cost_usd: 0.15 },
-      { id: 'automated_qa_guard', name: 'Unit Test & Lint Safety Guard', est_cost_usd: 0.20 },
-      { id: 'cron_automation_scheduler', name: 'Background Job Cron Scheduler', est_cost_usd: 0.25 }
-    ]
-  },
-
-  // FAMILY 5: AI Support & Chatbot Automation
-  {
-    family_id: 'cashclaw-customer-support',
-    name: 'AI Support & Chatbot Automation',
-    category: 'AI Chatbots',
-    default_price_usd: 49,
-    sub_capabilities: [
-      { id: 'chatbot_flow_designer', name: 'Customer Support Flow Designer', est_cost_usd: 0.30 },
-      { id: 'whatsapp_autoresponder', name: 'WhatsApp Business API Bot', est_cost_usd: 0.40 },
-      { id: 'system_prompt_engineer', name: 'LLM Prompt Engineering Specialist', est_cost_usd: 0.25 },
-      { id: 'social_moderator', name: 'Social Media Comment Auto-Moderator', est_cost_usd: 0.20 },
-      { id: 'design_asset_creator', name: 'Image Banner & Visual Graphic Creator', est_cost_usd: 0.35 },
-      { id: 'invoice_stripe_automator', name: 'Automated Stripe Invoicing & Receipts', est_cost_usd: 0.15 }
-    ]
-  },
-
-  // FAMILY 6: Competitor Analysis & Market Intelligence
-  {
-    family_id: 'cashclaw-competitor-analyzer',
-    name: 'Competitor Analysis & Market Research',
-    category: 'Market Intelligence',
-    default_price_usd: 35,
-    sub_capabilities: [
-      { id: 'competitor_traffic_audit', name: 'Competitor Web Traffic Estimator', est_cost_usd: 0.25 },
-      { id: 'swot_matrix_builder', name: 'Strategic SWOT Analysis Generator', est_cost_usd: 0.20 },
-      { id: 'pricing_strategy_tracker', name: 'Competitor Price Tracker', est_cost_usd: 0.30 },
-      { id: 'market_gap_finder', name: 'Unmet Market Needs Finder', est_cost_usd: 0.25 }
-    ]
-  },
-
-  // FAMILY 7: Data Scraping & Extraction
   {
     family_id: 'cashclaw-data-scraper',
-    name: 'Web Data Scraping & Extraction',
-    category: 'Data Engineering',
+    name: 'Web & Data Scraping',
+    category: 'B2B Lead Generation & Data Mining',
     default_price_usd: 25,
     sub_capabilities: [
-      { id: 'dom_parser', name: 'HTML DOM Selector Scraper', est_cost_usd: 0.20 },
-      { id: 'pagination_crawler', name: 'Multi-Page Infinite Scroll Crawler', est_cost_usd: 0.35 },
-      { id: 'captcha_bypasser', name: 'Proxy & Request Headers Rotator', est_cost_usd: 0.30 }
+      'Website crawling', 'Directory scraping', 'Search-result extraction', 'Product scraping',
+      'Pricing extraction', 'Contact-page extraction', 'Structured-data extraction',
+      'Pagination handling', 'JavaScript-rendered pages', 'Dynamic content extraction',
+      'Multi-site scraping', 'Scheduled scraping'
     ]
   },
-
-  // FAMILY 8: Email Outreach Campaigns
-  {
-    family_id: 'cashclaw-email-outreach',
-    name: 'B2B Cold Email Outreach Campaigns',
-    category: 'Outreach',
-    default_price_usd: 29,
-    sub_capabilities: [
-      { id: 'subject_line_optimizer', name: 'A/B Test Subject Line Generator', est_cost_usd: 0.15 },
-      { id: 'outreach_personalizer', name: 'Dynamic Variable Email Personalizer', est_cost_usd: 0.25 },
-      { id: 'bounce_prevention', name: 'Domain Reputation & SPF/DKIM Checker', est_cost_usd: 0.20 }
-    ]
-  },
-
-  // FAMILY 9: Landing Page Copy & HTML
-  {
-    family_id: 'cashclaw-landing-page',
-    name: 'Landing Page Copywriting & HTML',
-    category: 'Development & Copy',
-    default_price_usd: 39,
-    sub_capabilities: [
-      { id: 'hero_section_copy', name: 'High-Impact Hero Section Copywriter', est_cost_usd: 0.20 },
-      { id: 'social_proof_builder', name: 'Testimonial & Social Proof Structurer', est_cost_usd: 0.15 },
-      { id: 'cta_optimizer', name: 'Conversion-Focused CTA Button Copy', est_cost_usd: 0.10 },
-      { id: 'html_css_generator', name: 'Responsive Tailwind HTML Page Build', est_cost_usd: 0.40 }
-    ]
-  },
-
-  // FAMILY 10: Reputation & Review Management
-  {
-    family_id: 'cashclaw-reputation-manager',
-    name: 'Online Reputation & Review Management',
-    category: 'Reputation Management',
-    default_price_usd: 35,
-    sub_capabilities: [
-      { id: 'review_sentiment_analyzer', name: 'Customer Review Sentiment Classifier', est_cost_usd: 0.20 },
-      { id: 'response_generator', name: 'Empathetic Review Response Writer', est_cost_usd: 0.15 },
-      { id: 'crisis_alert_system', name: 'Negative Feedback Spike Monitor', est_cost_usd: 0.25 }
-    ]
-  },
-
-  // FAMILY 11: Social Media Management
-  {
-    family_id: 'cashclaw-social-media',
-    name: 'Social Media Management & Strategy',
-    category: 'Social Media',
-    default_price_usd: 19,
-    sub_capabilities: [
-      { id: 'content_calendar_builder', name: '30-Day Content Calendar Planner', est_cost_usd: 0.25 },
-      { id: 'caption_hashtag_generator', name: 'Engaging Caption & Hashtag Researcher', est_cost_usd: 0.15 }
-    ]
-  },
-
-  // FAMILY 12: WhatsApp Business Management
-  {
-    family_id: 'cashclaw-whatsapp-manager',
-    name: 'WhatsApp Business Messaging & Bots',
-    category: 'Messaging',
-    default_price_usd: 49,
-    sub_capabilities: [
-      { id: 'whatsapp_template_writer', name: 'Approved WhatsApp Campaign Templates', est_cost_usd: 0.20 },
-      { id: 'auto_reply_rules', name: 'Instant Keyword Auto-Reply Engine', est_cost_usd: 0.25 }
-    ]
-  },
-
-  // FAMILY 13: Invoicing & Billing
-  {
-    family_id: 'cashclaw-invoicer',
-    name: 'Stripe & PDF Automated Invoicing',
-    category: 'Financial Ops',
-    default_price_usd: 15,
-    sub_capabilities: [
-      { id: 'pdf_invoice_renderer', name: 'Custom Branded PDF Invoice Generator', est_cost_usd: 0.15 },
-      { id: 'stripe_payment_link', name: 'Stripe Checkout Link Creator', est_cost_usd: 0.10 }
-    ]
-  },
-
-  // FAMILY 14: Web Research
-  {
-    family_id: 'cashclaw-web-research',
-    name: 'Deep Web Research & Fact-Finding',
-    category: 'Research',
-    default_price_usd: 19,
-    sub_capabilities: [
-      { id: 'source_verifier', name: 'Multi-Source Fact Verification', est_cost_usd: 0.20 },
-      { id: 'executive_summary_builder', name: 'Synthesized Executive Research Summary', est_cost_usd: 0.25 }
-    ]
-  },
-
-  // FAMILY 15: Data Cleaning & Deduplication
   {
     family_id: 'cashclaw-data-cleaner',
-    name: 'Data Cleaning, Formatting & Deduplication',
-    category: 'Data Engineering',
+    name: 'Data Cleaning & Enrichment',
+    category: 'B2B Lead Generation & Data Mining',
     default_price_usd: 15,
     sub_capabilities: [
-      { id: 'schema_standardizer', name: 'Column & Data Format Standardizer', est_cost_usd: 0.15 },
-      { id: 'fuzzy_matcher', name: 'Fuzzy Duplicate Entity Resolver', est_cost_usd: 0.20 }
+      'CSV cleaning', 'Excel cleaning', 'JSON normalization', 'Duplicate removal',
+      'Field normalization', 'Name/company normalization', 'Missing-data detection',
+      'Data validation', 'Record merging', 'Lead enrichment', 'Dataset restructuring', 'Export formatting'
     ]
   },
-
-  // FAMILY 16: PDF Data Extraction
   {
     family_id: 'cashclaw-pdf-extractor',
-    name: 'PDF & Scanned Document Data Extraction',
-    category: 'Data Engineering',
+    name: 'Document/Data Extraction',
+    category: 'B2B Lead Generation & Data Mining',
     default_price_usd: 29,
     sub_capabilities: [
-      { id: 'ocr_table_extractor', name: 'OCR Table to Excel/CSV Extractor', est_cost_usd: 0.30 },
-      { id: 'receipt_invoice_parser', name: 'Receipt & Invoice Field Extractor', est_cost_usd: 0.25 }
+      'PDF text extraction', 'Table extraction', 'Invoice extraction', 'Contact extraction',
+      'Financial-data extraction', 'OCR', 'Document classification', 'Multi-PDF processing',
+      'PDF -> CSV', 'PDF -> Excel', 'PDF -> JSON', 'Structured report generation'
     ]
   },
-
-  // FAMILY 17: Data Analysis & Visualization
   {
-    family_id: 'cashclaw-data-analyst',
-    name: 'Data Analysis, Metrics & Charting',
-    category: 'Analytics',
-    default_price_usd: 39,
-    sub_capabilities: [
-      { id: 'pandas_stat_analyzer', name: 'Python Pandas Statistical Profiler', est_cost_usd: 0.30 },
-      { id: 'chart_graphic_generator', name: 'Matplotlib / Chart.js Visualizer', est_cost_usd: 0.25 }
-    ]
-  },
-
-  // FAMILY 18: API Integration & Webhooks
-  {
-    family_id: 'cashclaw-api-integrator',
-    name: 'REST/GraphQL API & Webhook Integration',
-    category: 'Development',
-    default_price_usd: 49,
-    sub_capabilities: [
-      { id: 'oauth_handler', name: 'OAuth2 Authentication Flow Implementer', est_cost_usd: 0.35 },
-      { id: 'webhook_receiver', name: 'Real-Time Webhook Listener Builder', est_cost_usd: 0.30 }
-    ]
-  },
-
-  // FAMILY 19: WordPress & WooCommerce
-  {
-    family_id: 'cashclaw-wordpress',
-    name: 'WordPress Development & Optimization',
-    category: 'Development',
-    default_price_usd: 49,
-    sub_capabilities: [
-      { id: 'plugin_configurator', name: 'WordPress Plugin Setup & Security', est_cost_usd: 0.25 },
-      { id: 'theme_customizer', name: 'Elementor / Gutenberg Theme Adjuster', est_cost_usd: 0.30 }
-    ]
-  },
-
-  // FAMILY 20: QA Testing & Code Audit
-  {
-    family_id: 'cashclaw-qa-tester',
-    name: 'Automated QA Testing & Code Audit',
-    category: 'Quality Assurance',
-    default_price_usd: 29,
-    sub_capabilities: [
-      { id: 'unit_test_generator', name: 'Jest / PyTest Automated Test Generator', est_cost_usd: 0.25 },
-      { id: 'vulnerability_checker', name: 'Security & Dependency Vulnerability Checker', est_cost_usd: 0.20 }
-    ]
-  },
-
-  // FAMILY 21: Translation & Localization
-  {
-    family_id: 'cashclaw-translator',
-    name: 'Multi-Language Translation & Localization',
-    category: 'Localization',
-    default_price_usd: 25,
-    sub_capabilities: [
-      { id: 'i18n_json_translator', name: 'Software i18n JSON File Translator', est_cost_usd: 0.20 },
-      { id: 'cultural_adapter', name: 'Cultural Tone & Nuance Adaptor', est_cost_usd: 0.25 }
-    ]
-  },
-
-  // FAMILY 22: Image Processing & Banner Design
-  {
-    family_id: 'cashclaw-image-processor',
-    name: 'AI Image Editing, Resizing & Graphic Assets',
-    category: 'Design',
-    default_price_usd: 25,
-    sub_capabilities: [
-      { id: 'background_remover', name: 'AI Product Background Remover', est_cost_usd: 0.15 },
-      { id: 'banner_ad_designer', name: 'Display Banner Ad Asset Designer', est_cost_usd: 0.30 }
-    ]
-  },
-
-  // FAMILY 23: Video Shorts & Reels Scripts
-  {
-    family_id: 'cashclaw-video-shorts',
-    name: 'Viral Video Shorts & TikTok Scripting',
-    category: 'Media Production',
-    default_price_usd: 29,
-    sub_capabilities: [
-      { id: 'hook_generator', name: '3-Second Viral Hook Writer', est_cost_usd: 0.15 },
-      { id: 'storyboard_creator', name: 'Visual Scene & Voiceover Storyboard', est_cost_usd: 0.25 }
-    ]
-  },
-
-  // FAMILY 24: Presentation & Slide Decks
-  {
-    family_id: 'cashclaw-presentation',
-    name: 'Investor Pitch Decks & Slide Presentations',
-    category: 'Business Design',
-    default_price_usd: 59,
-    sub_capabilities: [
-      { id: 'slide_outline_architect', name: '10-Slide Investor Narrative Structure', est_cost_usd: 0.30 },
-      { id: 'data_visual_presenter', name: 'Key Metrics & Financial Slide Formatting', est_cost_usd: 0.35 }
-    ]
-  },
-
-  // FAMILY 25: Resume & LinkedIn Profile Optimization
-  {
-    family_id: 'cashclaw-resume-linkedin',
-    name: 'Executive Resume & LinkedIn Profile Optimization',
-    category: 'Career Services',
-    default_price_usd: 35,
-    sub_capabilities: [
-      { id: 'ats_resume_optimizer', name: 'ATS Keyword Resume Optimizer', est_cost_usd: 0.25 },
-      { id: 'linkedin_headline_writer', name: 'High-Impact LinkedIn Headline & About Writer', est_cost_usd: 0.20 }
-    ]
-  },
-
-  // FAMILY 26: E-commerce Product Listings
-  {
-    family_id: 'cashclaw-ecommerce',
-    name: 'Amazon & Shopify Product Listing Optimization',
-    category: 'E-commerce',
-    default_price_usd: 29,
-    sub_capabilities: [
-      { id: 'amazon_seo_bullets', name: 'Amazon A9 Algorithm Bullet Points Writer', est_cost_usd: 0.25 },
-      { id: 'shopify_meta_tags', name: 'Shopify Product Meta Titles & Schema', est_cost_usd: 0.20 }
-    ]
-  },
-
-  // FAMILY 27: 24/7 AI Customer Support
-  {
-    family_id: 'cashclaw-customer-support',
-    name: '24/7 AI Customer Support Ticket Resolver',
-    category: 'Support Automation',
-    default_price_usd: 49,
-    sub_capabilities: [
-      { id: 'knowledge_base_indexer', name: 'Helpdesk Article Indexer & Matcher', est_cost_usd: 0.25 },
-      { id: 'ticket_auto_responder', name: 'Empathetic Customer Inquiry Resolver', est_cost_usd: 0.20 }
-    ]
-  },
-
-  // FAMILY 28: LLM Prompt Engineering & Tuning
-  {
-    family_id: 'cashclaw-prompt-engineer',
-    name: 'System Prompt Engineering & LLM Tuning',
-    category: 'AI Engineering',
-    default_price_usd: 39,
-    sub_capabilities: [
-      { id: 'few_shot_prompt_builder', name: 'Few-Shot Example & Persona Prompt Designer', est_cost_usd: 0.30 },
-      { id: 'prompt_evaluator', name: 'LLM Response Accuracy Evaluator', est_cost_usd: 0.25 }
-    ]
-  },
-
-  // FAMILY 29: Automated Proposal Generation
-  {
-    family_id: 'cashclaw-proposal-generator',
-    name: 'High-Win Client Proposal & Bid Writer',
-    category: 'B2B Sales',
-    default_price_usd: 29,
-    sub_capabilities: [
-      { id: 'proposal_customizer', name: 'Tailored Scope-of-Work Proposal Writer', est_cost_usd: 0.25 },
-      { id: 'pricing_estimator', name: 'Project Milestone & Pricing Calculator', est_cost_usd: 0.20 }
-    ]
-  },
-
-  // FAMILY 30: Core Orchestrator & Guard
-  {
-    family_id: 'cashclaw-core',
-    name: 'Core Master Orchestrator & Execution Guard',
-    category: 'Core System',
+    family_id: 'cashclaw-web-research',
+    name: 'Research Intelligence',
+    category: 'B2B Lead Generation & Data Mining',
     default_price_usd: 19,
     sub_capabilities: [
-      { id: 'task_orchestrator', name: 'Multi-Step Execution Pipeline Manager', est_cost_usd: 0.15 },
-      { id: 'security_sanitizer', name: 'Input & Output Security Sanitizer', est_cost_usd: 0.10 }
+      'Company research', 'Market research', 'Competitor research', 'Prospect research',
+      'Product research', 'Pricing research', 'Industry research', 'Contact verification',
+      'Source collection', 'Fact verification', 'Research summaries', 'Research reports'
+    ]
+  },
+  {
+    family_id: 'cashclaw-ecommerce',
+    name: 'E-commerce Intelligence',
+    category: 'B2B Lead Generation & Data Mining',
+    default_price_usd: 29,
+    sub_capabilities: [
+      'Product discovery', 'Product catalog extraction', 'Price comparison', 'Competitor-store research',
+      'Product-data scraping', 'SKU extraction', 'Inventory-data extraction', 'Product categorization',
+      'Product-description extraction', 'Marketplace research', 'Catalog cleanup', 'Store-data analysis'
+    ]
+  },
+
+  // 🔵 2. Technical SEO & Web Audits (5 Families)
+  {
+    family_id: 'cashclaw-seo-auditor',
+    name: 'Technical SEO',
+    category: 'Technical SEO & Web Audits',
+    default_price_usd: 49,
+    sub_capabilities: [
+      'Website crawling', 'Indexability analysis', 'Canonical analysis', 'Meta-tag analysis',
+      'Heading analysis', 'Internal-link analysis', 'Duplicate-content detection', 'HTTP-status analysis',
+      'Redirect analysis', 'Sitemap analysis', 'Robots.txt analysis', 'Technical SEO report'
+    ]
+  },
+  {
+    family_id: 'cashclaw-speed-auditor',
+    name: 'Core Web Vitals & Performance',
+    category: 'Technical SEO & Web Audits',
+    default_price_usd: 35,
+    sub_capabilities: [
+      'LCP analysis', 'INP analysis', 'CLS analysis', 'Page-load analysis', 'Mobile performance',
+      'Desktop performance', 'JavaScript analysis', 'CSS optimization analysis', 'Image optimization',
+      'Font optimization', 'Cache analysis', 'Performance recommendations'
+    ]
+  },
+  {
+    family_id: 'cashclaw-competitor-analyzer',
+    name: 'Competitor & Search Intelligence',
+    category: 'Technical SEO & Web Audits',
+    default_price_usd: 35,
+    sub_capabilities: [
+      'Competitor discovery', 'Keyword-gap analysis', 'Backlink analysis', 'Content-gap analysis',
+      'SERP comparison', 'Traffic-source analysis', 'Ranking comparison', 'Competitor-page analysis',
+      'Domain comparison', 'Content strategy analysis', 'Competitive report'
+    ]
+  },
+  {
+    family_id: 'cashclaw-landing-page',
+    name: 'SEO Landing Pages',
+    category: 'Technical SEO & Web Audits',
+    default_price_usd: 39,
+    sub_capabilities: [
+      'Keyword mapping', 'Search-intent analysis', 'Landing-page structure', 'SEO copy',
+      'Conversion copy', 'CTA optimization', 'HTML generation', 'Schema markup',
+      'Metadata generation', 'Mobile layout', 'Page-speed optimization', 'A/B-test variants'
+    ]
+  },
+  {
+    family_id: 'cashclaw-wordpress',
+    name: 'WordPress Optimization',
+    category: 'Technical SEO & Web Audits',
+    default_price_usd: 49,
+    sub_capabilities: [
+      'WordPress SEO', 'Plugin analysis', 'Theme analysis', 'Technical fixes',
+      'Metadata optimization', 'Sitemap configuration', 'Robots configuration', 'Broken-link fixes',
+      'Image optimization', 'Cache configuration', 'Core Web Vitals fixes', 'Security/basic configuration'
+    ]
+  },
+
+  // 🟣 3. SEO Content & Copywriting (7 Families)
+  {
+    family_id: 'cashclaw-content-writer',
+    name: 'SEO Content',
+    category: 'SEO Content & Copywriting',
+    default_price_usd: 25,
+    sub_capabilities: [
+      'Keyword research', 'Search-intent analysis', 'Article outlines', 'Long-form articles',
+      'Blog posts', 'Product content', 'SEO titles', 'Meta descriptions', 'Internal-link suggestions',
+      'Content optimization', 'Content refresh', 'Fact-checking', 'Editorial QA'
+    ]
+  },
+  {
+    family_id: 'cashclaw-email-outreach',
+    name: 'Sales & Email Copy',
+    category: 'SEO Content & Copywriting',
+    default_price_usd: 29,
+    sub_capabilities: [
+      'Cold-email research', 'Personalization', 'Subject-line generation', 'Cold-email writing',
+      'Follow-up sequences', 'Sales sequences', 'Newsletter copy', 'CTA optimization',
+      'A/B variants', 'Lead segmentation', 'Outreach personalization'
+    ]
+  },
+  {
+    family_id: 'cashclaw-proposal-generator',
+    name: 'Freelance Proposal Engine',
+    category: 'SEO Content & Copywriting',
+    default_price_usd: 29,
+    sub_capabilities: [
+      'Job analysis', 'Requirement extraction', 'Skill matching', 'Client pain-point identification',
+      'Proposal generation', 'Personalized opening', 'Scope definition', 'Pricing suggestion',
+      'Delivery estimate', 'Portfolio positioning', 'Marketplace-specific formatting', 'Bid quality scoring'
+    ]
+  },
+  {
+    family_id: 'cashclaw-video-shorts',
+    name: 'Short-Form Content',
+    category: 'SEO Content & Copywriting',
+    default_price_usd: 29,
+    sub_capabilities: [
+      'YouTube Shorts scripts', 'TikTok scripts', 'Instagram Reels scripts', 'Hooks',
+      'Storyboards', 'Captions', 'Titles', 'Descriptions', 'Hashtags', 'Content repurposing',
+      'Long-video -> short conversion'
+    ]
+  },
+  {
+    family_id: 'cashclaw-translator',
+    name: 'Translation & Localization',
+    category: 'SEO Content & Copywriting',
+    default_price_usd: 25,
+    sub_capabilities: [
+      'Translation', 'Tamil <-> English', 'Multilingual localization', 'Website localization',
+      'Marketing localization', 'SEO localization', 'Cultural adaptation', 'Subtitle translation',
+      'Document translation', 'Terminology consistency', 'Translation QA'
+    ]
+  },
+  {
+    family_id: 'cashclaw-presentation',
+    name: 'Business Presentation',
+    category: 'SEO Content & Copywriting',
+    default_price_usd: 59,
+    sub_capabilities: [
+      'Pitch decks', 'Investor decks', 'Sales decks', 'Company presentations', 'Slide structure',
+      'Slide copy', 'Data visualization planning', 'Speaker notes', 'Executive summaries',
+      'PowerPoint generation', 'Presentation QA'
+    ]
+  },
+  {
+    family_id: 'cashclaw-resume-linkedin',
+    name: 'Career Content',
+    category: 'SEO Content & Copywriting',
+    default_price_usd: 35,
+    sub_capabilities: [
+      'Resume creation', 'Resume optimization', 'ATS optimization', 'Job-description matching',
+      'LinkedIn profile optimization', 'LinkedIn headline', 'LinkedIn summary',
+      'Achievement rewriting', 'Cover letters', 'Career positioning', 'Application customization'
+    ]
+  },
+
+  // 🟠 4. Python Automation & Development (6 Families)
+  {
+    family_id: 'cashclaw-python-automation',
+    name: 'Python Automation',
+    category: 'Python Automation & Development',
+    default_price_usd: 39,
+    sub_capabilities: [
+      'Python scripts', 'Data-processing scripts', 'File automation', 'CSV automation',
+      'Excel automation', 'Web automation', 'Browser automation', 'API automation',
+      'Scheduled scripts', 'CLI tools', 'Workflow automation', 'Debugging'
+    ]
+  },
+  {
+    family_id: 'cashclaw-api-integrator',
+    name: 'API & Integration',
+    category: 'Python Automation & Development',
+    default_price_usd: 49,
+    sub_capabilities: [
+      'REST APIs', 'GraphQL', 'Webhooks', 'Authentication', 'OAuth', 'API data extraction',
+      'API-to-API integration', 'JSON transformation', 'Rate-limit handling', 'Error handling',
+      'Integration testing', 'Documentation'
+    ]
+  },
+  {
+    family_id: 'cashclaw-qa-tester',
+    name: 'QA & Testing',
+    category: 'Python Automation & Development',
+    default_price_usd: 29,
+    sub_capabilities: [
+      'Website testing', 'API testing', 'Functional testing', 'Regression testing',
+      'UI testing', 'Mobile testing', 'Browser testing', 'Bug reproduction',
+      'Bug classification', 'Test-case generation', 'Automated tests', 'QA reports'
+    ]
+  },
+  {
+    family_id: 'cashclaw-data-analyst',
+    name: 'Data Analysis',
+    category: 'Python Automation & Development',
+    default_price_usd: 39,
+    sub_capabilities: [
+      'Data cleaning', 'Exploratory analysis', 'Statistical analysis', 'KPI analysis',
+      'Trend analysis', 'Forecasting', 'Excel analysis', 'CSV analysis', 'Python/Pandas analysis',
+      'Chart generation', 'Business insights', 'Automated reports'
+    ]
+  },
+  {
+    family_id: 'cashclaw-core',
+    name: 'Mission Orchestration',
+    category: 'Python Automation & Development',
+    default_price_usd: 19,
+    sub_capabilities: [
+      'Job intake', 'Requirement extraction', 'Skill selection', 'Sub-skill selection',
+      'Agent assignment', 'Workflow planning', 'Multi-agent delegation', 'Job state management',
+      'Deliverable tracking', 'Retry handling', 'Completion verification'
+    ]
+  },
+  {
+    family_id: 'cashclaw-guard',
+    name: 'Agent Security & Cost Control',
+    category: 'Python Automation & Development',
+    default_price_usd: 19,
+    sub_capabilities: [
+      'Token-budget control', 'API-cost limits', 'Recursion detection', 'Tool permissions',
+      'Rate limiting', 'Dangerous-tool blocking', 'Agent kill switch', 'Audit logs',
+      'Failure detection', 'Telegram alerts', 'Spending protection'
+    ]
+  },
+
+  // 🔴 5. AI Chatbots & Customer Support (6 Families)
+  {
+    family_id: 'cashclaw-customer-support',
+    name: 'AI Customer Support',
+    category: 'AI Chatbots & Customer Support',
+    default_price_usd: 49,
+    sub_capabilities: [
+      'FAQ chatbot', 'Ticket classification', 'Ticket routing', 'Response generation',
+      'Knowledge-base answers', 'Customer sentiment', 'Escalation detection', 'Support summarization',
+      'Email support', 'Chat support', 'Support analytics'
+    ]
+  },
+  {
+    family_id: 'cashclaw-whatsapp-manager',
+    name: 'WhatsApp Business',
+    category: 'AI Chatbots & Customer Support',
+    default_price_usd: 49,
+    sub_capabilities: [
+      'Auto-responses', 'FAQ automation', 'Lead qualification', 'Appointment handling',
+      'Customer follow-up', 'Message templates', 'Campaign workflows', 'Conversation routing',
+      'Customer segmentation', 'Human escalation'
+    ]
+  },
+  {
+    family_id: 'cashclaw-prompt-engineer',
+    name: 'AI Workflow Engineering',
+    category: 'AI Chatbots & Customer Support',
+    default_price_usd: 39,
+    sub_capabilities: [
+      'System prompts', 'Agent prompts', 'Prompt optimization', 'Structured-output prompts',
+      'Tool-use prompts', 'RAG prompts', 'Evaluation prompts', 'Model comparison',
+      'AI workflow design', 'Prompt testing', 'Guardrail design'
+    ]
+  },
+  {
+    family_id: 'cashclaw-social-media',
+    name: 'Social Media',
+    category: 'AI Chatbots & Customer Support',
+    default_price_usd: 19,
+    sub_capabilities: [
+      'Content calendars', 'LinkedIn posts', 'Instagram content', 'Facebook content',
+      'X/Twitter content', 'Captions', 'Hashtags', 'Comment responses', 'Community management',
+      'Content repurposing', 'Engagement analysis'
+    ]
+  },
+  {
+    family_id: 'cashclaw-image-processor',
+    name: 'Image & Creative Assets',
+    category: 'AI Chatbots & Customer Support',
+    default_price_usd: 25,
+    sub_capabilities: [
+      'Image resizing', 'Compression', 'Format conversion', 'Background removal',
+      'Image enhancement', 'Thumbnail creation', 'Banner creation', 'Social graphics',
+      'Product-image optimization', 'Basic creative variations'
+    ]
+  },
+  {
+    family_id: 'cashclaw-invoicer',
+    name: 'Payments & Operations',
+    category: 'AI Chatbots & Customer Support',
+    default_price_usd: 15,
+    sub_capabilities: [
+      'Invoice generation', 'Payment links', 'Stripe invoices', 'Payment tracking',
+      'Payment reminders', 'Receipt generation', 'Refund workflow', 'Subscription tracking',
+      'Revenue reporting', 'Client billing records'
     ]
   }
 ];
 
 /**
- * Get total sub-capabilities count across all 30 families.
+ * Dynamically compose a multi-skill workflow pipeline for complex jobs.
  */
-export function getTotalSubCapabilitiesCount() {
-  return SKILL_FAMILIES.reduce((acc, fam) => acc + fam.sub_capabilities.length, 0);
+export function composeWorkflowPipeline(jobTitle, jobDescription) {
+  const fullText = `${jobTitle} ${jobDescription}`.toLowerCase();
+  const activeSubCapabilities = [];
+  const requiredFamilies = new Set();
+
+  for (const family of SKILL_FAMILIES_V2) {
+    let familyMatched = false;
+    for (const sub of family.sub_capabilities) {
+      if (fullText.includes(sub.toLowerCase())) {
+        activeSubCapabilities.push({ family: family.family_id, capability: sub });
+        familyMatched = true;
+      }
+    }
+    if (familyMatched) {
+      requiredFamilies.add(family.family_id);
+    }
+  }
+
+  // Fallback to top family if no exact sub-capabilities matched in text
+  if (requiredFamilies.size === 0) {
+    requiredFamilies.add(SKILL_FAMILIES_V2[0].family_id);
+    activeSubCapabilities.push({ family: SKILL_FAMILIES_V2[0].family_id, capability: SKILL_FAMILIES_V2[0].sub_capabilities[0] });
+  }
+
+  return {
+    pipeline_steps_count: activeSubCapabilities.length,
+    required_families: Array.from(requiredFamilies),
+    pipeline: activeSubCapabilities
+  };
 }
