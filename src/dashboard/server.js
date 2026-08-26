@@ -72,6 +72,7 @@ export function createDashboardServer() {
 
       res.json({
         agent: config.agent,
+        payout_bank: config.payout_bank || null,
         stripe: {
           connected: config.stripe?.connected || false,
           mode: config.stripe?.mode || 'test',

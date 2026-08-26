@@ -41,6 +41,16 @@ export function getDefaultConfig() {
       export_purpose_code: 'P0802',
       created_at: new Date().toISOString(),
     },
+    payout_bank: {
+      account_name: 'Jai Ganesh',
+      bank_name: 'Wise US Inc (Column Bank Partner)',
+      account_type: 'Checking / Deposit',
+      routing_number: '084009519',
+      account_number: '500681779992132',
+      swift_bic: 'TRWIUS35XXX',
+      address: '108 W 13th St, Wilmington, DE, 19801, United States',
+      status: 'VERIFIED 🟢'
+    },
     stripe: {
       secret_key: process.env.STRIPE_SECRET_KEY || '',
       publishable_key: process.env.STRIPE_PUBLISHABLE_KEY || '',
