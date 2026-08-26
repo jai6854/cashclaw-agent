@@ -51,6 +51,18 @@ async function loadStatus() {
   document.getElementById('infoEmail').textContent = data.agent?.email || '-';
   document.getElementById('infoCurrency').textContent = data.agent?.currency || 'USD';
 
+  if (data.economy) {
+    if (document.getElementById('econEligible')) document.getElementById('econEligible').textContent = data.economy.eligible_jobs;
+    if (document.getElementById('econBids')) document.getElementById('econBids').textContent = data.economy.bids_submitted;
+    if (document.getElementById('econAccepted')) document.getElementById('econAccepted').textContent = data.economy.bids_accepted;
+    if (document.getElementById('econExecuting')) document.getElementById('econExecuting').textContent = data.economy.jobs_executing;
+    if (document.getElementById('econDelivered')) document.getElementById('econDelivered').textContent = data.economy.jobs_delivered;
+    if (document.getElementById('econPaid')) document.getElementById('econPaid').textContent = data.economy.jobs_paid + ' 🏆';
+    if (document.getElementById('econRevenue')) document.getElementById('econRevenue').textContent = '$' + data.economy.revenue_usd.toFixed(2);
+    if (document.getElementById('econCost')) document.getElementById('econCost').textContent = '$' + data.economy.ai_api_cost_usd.toFixed(2);
+    if (document.getElementById('econProfit')) document.getElementById('econProfit').textContent = '$' + data.economy.net_profit_usd.toFixed(2) + ' (' + data.economy.net_profit_margin + ')';
+  }
+
   const stripeEl = document.getElementById('infoStripe');
   if (data.stripe?.connected) {
     stripeEl.textContent = 'Connected (' + data.stripe.mode + ')';
