@@ -4,6 +4,7 @@ import os from 'os';
 import { v4 as uuidv4 } from 'uuid';
 import dayjs from 'dayjs';
 import { VERSION } from '../utils/version.js';
+import { recordEarning } from './earnings-tracker.js';
 
 const MISSIONS_DIR = path.join(os.homedir(), '.cashclaw', 'missions');
 
@@ -134,6 +135,20 @@ export async function completeMission(id) {
 
   const completedSteps = mission.steps.filter((s) => s.status === 'completed').length;
   addTrailEntry(mission, 'mission_completed', `All ${completedSteps} steps done — ready for invoicing ($${mission.price_usd})`);
+
+  try {
+    await recordEarning({
+      mission_id: mission.id,
+      service_type: mission.service_type || 'general',
+      amount: mission.price_usd || 0,
+      currency: 'USD',
+      client_name: mission.client?.name || 'Walk-in Client',
+      client_email: mission.client?.email || '',
+      description: mission.name
+    });
+  } catch (err) {
+    // Ignore if earnings recording fails
+  }
 
   const missionPath = path.join(MISSIONS_DIR, `${id}.json`);
   await fs.writeJson(missionPath, mission, { spaces: 2 });
