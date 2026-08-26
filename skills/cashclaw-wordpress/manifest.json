@@ -1,0 +1,7 @@
+{
+  "id": "cashclaw-wordpress",
+  "name": "WordPress Agent",
+  "version": "2.0.0",
+  "revenue_skill": true,
+  "human_review_required": true
+}

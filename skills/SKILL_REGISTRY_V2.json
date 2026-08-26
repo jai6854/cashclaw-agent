@@ -1,0 +1,108 @@
+{
+  "version": "2.0.0",
+  "total_skills": 30,
+  "new_skills": [
+    {
+      "id": 14,
+      "slug": "cashclaw-web-research",
+      "name": "Web Research Agent",
+      "revenue_skill": true
+    },
+    {
+      "id": 15,
+      "slug": "cashclaw-data-cleaner",
+      "name": "Data Cleaning Agent",
+      "revenue_skill": true
+    },
+    {
+      "id": 16,
+      "slug": "cashclaw-pdf-extractor",
+      "name": "PDF Extraction Agent",
+      "revenue_skill": true
+    },
+    {
+      "id": 17,
+      "slug": "cashclaw-data-analyst",
+      "name": "Data Analysis Agent",
+      "revenue_skill": true
+    },
+    {
+      "id": 18,
+      "slug": "cashclaw-python-automation",
+      "name": "Python Automation Agent",
+      "revenue_skill": true
+    },
+    {
+      "id": 19,
+      "slug": "cashclaw-api-integrator",
+      "name": "API Integration Agent",
+      "revenue_skill": true
+    },
+    {
+      "id": 20,
+      "slug": "cashclaw-wordpress",
+      "name": "WordPress Agent",
+      "revenue_skill": true
+    },
+    {
+      "id": 21,
+      "slug": "cashclaw-qa-tester",
+      "name": "QA Testing Agent",
+      "revenue_skill": true
+    },
+    {
+      "id": 22,
+      "slug": "cashclaw-translator",
+      "name": "Translation Agent",
+      "revenue_skill": true
+    },
+    {
+      "id": 23,
+      "slug": "cashclaw-image-processor",
+      "name": "Image Processing Agent",
+      "revenue_skill": true
+    },
+    {
+      "id": 24,
+      "slug": "cashclaw-video-shorts",
+      "name": "Video Shorts Agent",
+      "revenue_skill": true
+    },
+    {
+      "id": 25,
+      "slug": "cashclaw-presentation",
+      "name": "Presentation Agent",
+      "revenue_skill": true
+    },
+    {
+      "id": 26,
+      "slug": "cashclaw-resume-linkedin",
+      "name": "Resume LinkedIn Agent",
+      "revenue_skill": true
+    },
+    {
+      "id": 27,
+      "slug": "cashclaw-ecommerce",
+      "name": "Ecommerce Listing Agent",
+      "revenue_skill": true
+    },
+    {
+      "id": 28,
+      "slug": "cashclaw-customer-support",
+      "name": "Customer Support Agent",
+      "revenue_skill": true
+    },
+    {
+      "id": 29,
+      "slug": "cashclaw-prompt-engineer",
+      "name": "Prompt Engineering Agent",
+      "revenue_skill": true
+    },
+    {
+      "id": 30,
+      "slug": "cashclaw-proposal-generator",
+      "name": "Proposal Generator Agent",
+      "revenue_skill": true
+    }
+  ]
+}
