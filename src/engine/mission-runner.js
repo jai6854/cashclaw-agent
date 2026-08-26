@@ -48,7 +48,7 @@ export async function createMission(template, client = {}) {
     tier: template.tier || 'basic',
     name: template.name || 'Untitled Mission',
     description: template.description || '',
-    price_usd: template.default_price_usd || 0,
+    price_usd: template.price_usd || template.default_price_usd || 0,
     estimated_hours: template.estimated_hours || 1,
     skills_required: template.skills_required || [],
     deliverables: template.deliverables || [],
