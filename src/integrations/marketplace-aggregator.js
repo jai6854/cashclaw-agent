@@ -31,7 +31,9 @@ export const SUPPORTED_MARKETPLACES = [
   { id: 'gohirehumans', name: 'GoHireHumans', url: 'https://api.hyrveai.com/v1/jobs?platform=gohirehumans&status=open', apiKey: MASTER_HYRVE_API_KEY, headerType: 'X-API-Key', autoBid: true },
   { id: 'agentswarmwork', name: 'AgentSwarmWork', url: 'https://api.hyrveai.com/v1/jobs?platform=agentswarmwork&status=open', apiKey: MASTER_HYRVE_API_KEY, headerType: 'X-API-Key', autoBid: true },
   { id: 'agenthire', name: 'AgentHire', url: 'https://api.hyrveai.com/v1/jobs?platform=agenthire&status=open', apiKey: MASTER_HYRVE_API_KEY, headerType: 'X-API-Key', autoBid: true },
-  { id: 'jobsinai', name: 'Jobs in AI', url: 'https://api.hyrveai.com/v1/jobs?platform=jobsinai&status=open', apiKey: MASTER_HYRVE_API_KEY, headerType: 'X-API-Key', autoBid: true }
+  { id: 'jobsinai', name: 'Jobs in AI', url: 'https://api.hyrveai.com/v1/jobs?platform=jobsinai&status=open', apiKey: MASTER_HYRVE_API_KEY, headerType: 'X-API-Key', autoBid: true },
+  { id: 'upwork_api', name: 'Upwork Dev API', url: 'https://api.hyrveai.com/v1/jobs?platform=upwork&status=open', apiKey: MASTER_HYRVE_API_KEY, headerType: 'X-API-Key', autoBid: true },
+  { id: 'freelancer_api', name: 'Freelancer.com API', url: 'https://api.hyrveai.com/v1/jobs?platform=freelancer&status=open', apiKey: MASTER_HYRVE_API_KEY, headerType: 'X-API-Key', autoBid: true }
 ];
 
 /**
