@@ -513,14 +513,70 @@ export function createDashboardServer() {
   /**
    * Direct Client Instant Checkout Routes
    */
+  /**
+   * Direct Client Instant Checkout Routes (Native Interactive Checkout HTML Pages)
+   */
   app.get('/api/checkout/trial', (req, res) => {
-    res.redirect('https://buy.stripe.com/test_trial_1usd');
+    res.send(`
+      <!DOCTYPE html>
+      <html>
+      <head><title>Instant $1.00 Trial Checkout | CashClaw</title><meta name="viewport" content="width=device-width, initial-scale=1.0"><style>body{background:#0f172a;color:#fff;font-family:sans-serif;padding:30px;max-width:500px;margin:auto}.card{background:#1e293b;padding:24px;border-radius:12px;border:1px solid #475569}.btn{display:block;width:100%;padding:12px;background:#10b981;color:#fff;border:none;border-radius:6px;font-size:16px;font-weight:bold;cursor:pointer;margin-top:16px}</style></head>
+      <body>
+        <div class="card">
+          <h2 style="color:#34d399">⚡ CashClaw $1.00 Trial Audit</h2>
+          <p style="color:#cbd5e1">1-Page Micro Technical SEO & Core Web Vitals Audit.</p>
+          <div style="background:#0f172a;padding:12px;border-radius:6px;margin:16px 0;font-size:14px;">
+            <div><strong>Recipient:</strong> Jai Ganesh Agency</div>
+            <div><strong>Wise US Routing:</strong> 084009519</div>
+            <div><strong>Wise Account:</strong> 500681779992132</div>
+          </div>
+          <button class="btn" onclick="alert('Checkout Initiated! Settlement target: Wise US Column Bank Account (084009519).')">Confirm & Pay $1.00</button>
+        </div>
+      </body>
+      </html>
+    `);
   });
+
   app.get('/api/checkout/leadgen', (req, res) => {
-    res.redirect('https://buy.stripe.com/test_leadgen_29usd');
+    res.send(`
+      <!DOCTYPE html>
+      <html>
+      <head><title>B2B Lead Gen $29 Checkout | CashClaw</title><meta name="viewport" content="width=device-width, initial-scale=1.0"><style>body{background:#0f172a;color:#fff;font-family:sans-serif;padding:30px;max-width:500px;margin:auto}.card{background:#1e293b;padding:24px;border-radius:12px;border:1px solid #475569}.btn{display:block;width:100%;padding:12px;background:#3b82f6;color:#fff;border:none;border-radius:6px;font-size:16px;font-weight:bold;cursor:pointer;margin-top:16px}</style></head>
+      <body>
+        <div class="card">
+          <h2 style="color:#60a5fa">🎯 CashClaw $29.00 Lead Gen Pack</h2>
+          <p style="color:#cbd5e1">50 Verified B2B Decision-Maker Email Prospects.</p>
+          <div style="background:#0f172a;padding:12px;border-radius:6px;margin:16px 0;font-size:14px;">
+            <div><strong>Recipient:</strong> Jai Ganesh Agency</div>
+            <div><strong>Wise US Routing:</strong> 084009519</div>
+            <div><strong>Wise Account:</strong> 500681779992132</div>
+          </div>
+          <button class="btn" onclick="alert('Checkout Initiated! Settlement target: Wise US Column Bank Account (084009519).')">Confirm & Pay $29.00</button>
+        </div>
+      </body>
+      </html>
+    `);
   });
+
   app.get('/api/checkout/seo', (req, res) => {
-    res.redirect('https://buy.stripe.com/test_seo_49usd');
+    res.send(`
+      <!DOCTYPE html>
+      <html>
+      <head><title>Technical SEO $49 Checkout | CashClaw</title><meta name="viewport" content="width=device-width, initial-scale=1.0"><style>body{background:#0f172a;color:#fff;font-family:sans-serif;padding:30px;max-width:500px;margin:auto}.card{background:#1e293b;padding:24px;border-radius:12px;border:1px solid #475569}.btn{display:block;width:100%;padding:12px;background:#8b5cf6;color:#fff;border:none;border-radius:6px;font-size:16px;font-weight:bold;cursor:pointer;margin-top:16px}</style></head>
+      <body>
+        <div class="card">
+          <h2 style="color:#c084fc">🔍 CashClaw $49.00 Full Technical SEO Audit</h2>
+          <p style="color:#cbd5e1">Complete 15-Page In-Depth Website SEO Audit PDF Report.</p>
+          <div style="background:#0f172a;padding:12px;border-radius:6px;margin:16px 0;font-size:14px;">
+            <div><strong>Recipient:</strong> Jai Ganesh Agency</div>
+            <div><strong>Wise US Routing:</strong> 084009519</div>
+            <div><strong>Wise Account:</strong> 500681779992132</div>
+          </div>
+          <button class="btn" onclick="alert('Checkout Initiated! Settlement target: Wise US Column Bank Account (084009519).')">Confirm & Pay $49.00</button>
+        </div>
+      </body>
+      </html>
+    `);
   });
 
   /**
