@@ -68,10 +68,11 @@ async function loadStatus() {
     const healthList = (data.network_health && data.network_health.length > 0) ? data.network_health : null;
     
     const renderConnector = (c) => {
-      const color = c.connection_type === 'native_direct' || c.connection_type === 'native_public_feed' ? '#4ade80' : c.connection_type === 'oauth_key_required' ? '#fbbf24' : '#f87171';
+      const color = (c.connection_type === 'native_direct' || c.connection_type === 'native_public_feed' || c.connection_type === 'agent_registered' || c.connection_type === 'did_ed25519_signed') ? '#4ade80' : c.connection_type === 'oauth_key_required' ? '#fbbf24' : '#f87171';
+      const phaseBadge = c.phase ? `<span style="background: #334155; color: #94a3b8; font-size: 0.7rem; padding: 2px 6px; border-radius: 4px; margin-right: 6px;">P${c.phase}</span>` : '';
       return `
         <div style="background: #1e293b; padding: 8px 12px; border-radius: 6px; border-left: 3px solid ${color}; font-size: 0.82rem;">
-          <span style="color: #cbd5e1; font-weight: bold;">${c.name}</span>:
+          ${phaseBadge}<span style="color: #cbd5e1; font-weight: bold;">${c.name}</span>:
           <span style="color: ${color}; font-weight: bold; margin-left: 4px;">
             ${c.type_label || c.health_label}
           </span>
