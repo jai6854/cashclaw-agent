@@ -67,26 +67,24 @@ async function loadStatus() {
     const grid = document.getElementById('networkHealthGrid');
     const healthList = (data.network_health && data.network_health.length > 0) ? data.network_health : null;
     
-    if (healthList) {
-      grid.innerHTML = healthList.map(c => `
-        <div style="background: #1e293b; padding: 8px 12px; border-radius: 6px; border-left: 3px solid ${c.http_status === 200 ? '#4ade80' : c.http_status === 401 ? '#fbbf24' : '#f87171'};">
+    const renderConnector = (c) => {
+      const color = c.connection_type === 'native_direct' || c.connection_type === 'native_public_feed' ? '#4ade80' : c.connection_type === 'oauth_key_required' ? '#fbbf24' : '#f87171';
+      return `
+        <div style="background: #1e293b; padding: 8px 12px; border-radius: 6px; border-left: 3px solid ${color}; font-size: 0.82rem;">
           <span style="color: #cbd5e1; font-weight: bold;">${c.name}</span>:
-          <span style="color: ${c.http_status === 200 ? '#4ade80' : c.http_status === 401 ? '#fbbf24' : '#f87171'}; font-weight: bold; margin-left: 4px;">
-            ${c.health_label}
+          <span style="color: ${color}; font-weight: bold; margin-left: 4px;">
+            ${c.type_label || c.health_label}
           </span>
         </div>
-      `).join('');
+      `;
+    };
+
+    if (healthList) {
+      grid.innerHTML = healthList.map(renderConnector).join('');
     } else {
       fetch('/api/marketplaces/health').then(r => r.json()).then(h => {
         if (h.connectors && h.connectors.length > 0) {
-          grid.innerHTML = h.connectors.map(c => `
-            <div style="background: #1e293b; padding: 8px 12px; border-radius: 6px; border-left: 3px solid ${c.http_status === 200 ? '#4ade80' : c.http_status === 401 ? '#fbbf24' : '#f87171'};">
-              <span style="color: #cbd5e1; font-weight: bold;">${c.name}</span>:
-              <span style="color: ${c.http_status === 200 ? '#4ade80' : c.http_status === 401 ? '#fbbf24' : '#f87171'}; font-weight: bold; margin-left: 4px;">
-                ${c.health_label}
-              </span>
-            </div>
-          `).join('');
+          grid.innerHTML = h.connectors.map(renderConnector).join('');
         }
       }).catch(() => {});
     }
