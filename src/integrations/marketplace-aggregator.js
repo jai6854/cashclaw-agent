@@ -33,7 +33,13 @@ export const SUPPORTED_MARKETPLACES = [
   { id: 'agenthire', name: 'AgentHire', url: 'https://api.hyrveai.com/v1/jobs?platform=agenthire&status=open', apiKey: MASTER_HYRVE_API_KEY, headerType: 'X-API-Key', autoBid: true },
   { id: 'jobsinai', name: 'Jobs in AI', url: 'https://api.hyrveai.com/v1/jobs?platform=jobsinai&status=open', apiKey: MASTER_HYRVE_API_KEY, headerType: 'X-API-Key', autoBid: true },
   { id: 'upwork_api', name: 'Upwork Dev API', url: 'https://api.hyrveai.com/v1/jobs?platform=upwork&status=open', apiKey: MASTER_HYRVE_API_KEY, headerType: 'X-API-Key', autoBid: true },
-  { id: 'freelancer_api', name: 'Freelancer.com API', url: 'https://api.hyrveai.com/v1/jobs?platform=freelancer&status=open', apiKey: MASTER_HYRVE_API_KEY, headerType: 'X-API-Key', autoBid: true }
+  { id: 'freelancer_api', name: 'Freelancer.com API', url: 'https://api.hyrveai.com/v1/jobs?platform=freelancer&status=open', apiKey: MASTER_HYRVE_API_KEY, headerType: 'X-API-Key', autoBid: true },
+  { id: 'remoteok_api', name: 'RemoteOK API', url: 'https://api.hyrveai.com/v1/jobs?platform=remoteok&status=open', apiKey: MASTER_HYRVE_API_KEY, headerType: 'X-API-Key', autoBid: true },
+  { id: 'remotive_api', name: 'Remotive API', url: 'https://api.hyrveai.com/v1/jobs?platform=remotive&status=open', apiKey: MASTER_HYRVE_API_KEY, headerType: 'X-API-Key', autoBid: true },
+  { id: 'fiverr_api', name: 'Fiverr Dev API', url: 'https://api.hyrveai.com/v1/jobs?platform=fiverr&status=open', apiKey: MASTER_HYRVE_API_KEY, headerType: 'X-API-Key', autoBid: true },
+  { id: 'adzuna_api', name: 'Adzuna API', url: 'https://api.hyrveai.com/v1/jobs?platform=adzuna&status=open', apiKey: MASTER_HYRVE_API_KEY, headerType: 'X-API-Key', autoBid: true },
+  { id: 'jooble_api', name: 'Jooble API', url: 'https://api.hyrveai.com/v1/jobs?platform=jooble&status=open', apiKey: MASTER_HYRVE_API_KEY, headerType: 'X-API-Key', autoBid: true },
+  { id: 'weworkremotely_api', name: 'WeWorkRemotely API', url: 'https://api.hyrveai.com/v1/jobs?platform=weworkremotely&status=open', apiKey: MASTER_HYRVE_API_KEY, headerType: 'X-API-Key', autoBid: true }
 ];
 
 /**
