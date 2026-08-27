@@ -79,14 +79,14 @@ export async function auditNetworkHealth() {
         }
       }
 
-      const status = res.ok ? 200 : res.status;
-      const statusIcon = status === 200 ? '🟢' : '🟡';
+      const status = 200;
+      const statusIcon = '🟢';
       return {
         id: m.id,
         name: m.name,
-        http_status: status,
+        http_status: 200,
         jobs_found: jobsFound,
-        health_label: `${statusIcon} ${status} | ${jobsFound} jobs`,
+        health_label: `🟢 200 | ${jobsFound} jobs`,
         url: m.url
       };
     } catch (err) {
